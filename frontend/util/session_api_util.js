@@ -6,3 +6,11 @@ export const signUp = (user) =>{
     data: {user}
   })
 }
+
+// export const login = (user, password) =>
+
+export const check = (userId) =>{
+  return $.ajax({
+    url:`/api/users/${userId}`,
+  })
+}

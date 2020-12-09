@@ -28,11 +28,11 @@ export const logout = () => (
   })
 );
 
-export const logindemo = user => {
-  user = {username: 'DemoUser', password: 'demouser'}
-  return ($.ajax({
-    method: 'POST',
-    url: '/api/session',
-    data: { user }
-  }))
-};
+// export const logindemo = () => {
+//   user = {username: 'DemoUser', password: 'demouser'}
+//   return ($.ajax({
+//     method: 'POST',
+//     url: '/api/session',
+//     data: { user }
+//   }))
+// };

@@ -19,6 +19,7 @@ class User extends React.Component {
       <Link to="/login">Login</Link>
       &nbsp;or&nbsp;
       <Link to="/signup">Sign up!</Link>
+      <Link></Link>
     </nav>
   )};
 

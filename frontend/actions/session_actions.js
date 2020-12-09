@@ -39,3 +39,13 @@ export const logout = () => dispatch => (
     dispatch(logoutCurrentUser())
   ))
 );
+
+
+export const loginDemo = () => dispatch => {
+  const demouser = {username: 'DemoUser', password: 'demouser'}
+  return (APIUtil.login(demouser).then(user => (
+    dispatch(receiveCurrentUser(user))
+  ), err => (
+    dispatch(receiveErrors(err.responseJSON))
+  )))
+};

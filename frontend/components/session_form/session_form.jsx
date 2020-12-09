@@ -8,6 +8,8 @@ export default class SessionForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
+    // this.handleKeypress = this.handleKeypress.bind(this);
   }
 
   update(field) {
@@ -21,6 +23,20 @@ export default class SessionForm extends React.Component {
   const user = Object.assign({}, this.state);
   this.props.processForm(user); //TODO:?
   }
+
+  handleDemo(e){
+    e.preventDefault();
+    
+    this.props.processDemo(); 
+    }
+  
+  // handleKeypress(e){
+  //     //it triggers by pressing the enter key
+  //     e.preventDefault();
+  //   if (e.keyCode === 13) {
+  //     handleSubmit(e);
+  //   }
+  // };
 
   renderErrors() {
     return(
@@ -38,11 +54,14 @@ export default class SessionForm extends React.Component {
   render() {
     return (
       <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
           Welcome to WeSlack!
+        <button value='demo' onClick={this.handleDemo}>DemoLogin</button>
+        <form onSubmit={this.handleSubmit} className="login-form-box">
 
           <br/>
           Please {this.props.formType} or {this.props.navLink}
+          
+
           {this.renderErrors()}
           <div className="login-form">
           <br/>
@@ -66,7 +85,7 @@ export default class SessionForm extends React.Component {
 
           <br/>
 
-          <input className="session-submit" type="submit" value={this.props.formType} />
+          <input className="session-submit" type="submit" value={this.props.formType}   />
 
           </div>
         </form>

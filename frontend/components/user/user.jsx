@@ -15,7 +15,7 @@ class User extends React.Component {
   const sessionLinks = () => {
     return (
     <nav className="login-signup">
-      this is user.jsx's session link
+      
       <Link to="/login">Login</Link>
       &nbsp;or&nbsp;
       <Link to="/signup">Sign up!</Link>

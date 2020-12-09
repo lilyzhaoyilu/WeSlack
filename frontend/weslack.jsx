@@ -9,7 +9,21 @@ import {signup, check, login} from "./util/session_api_util"
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  const store = configureStore();
+  let store;
+  if (window.currentUser) {
+    const preloadedState = {
+      session: { currentUser: window.currentUser.id },
+      entities: {
+        users: { [window.currentUser.id]: window.currentUser }
+      }
+    };
+    store = configureStore(preloadedState);
+    delete window.currentUser;
+  } else {
+    store = configureStore();
+  }
+
+
   ////////////////////////////////TODO:testing and delete
   window.signup = signup;
   window.check = check;

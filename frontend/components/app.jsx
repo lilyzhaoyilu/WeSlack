@@ -20,8 +20,8 @@ import SignupFormContainer from './session_form/signup_form_container'
 const App = () => (
   <div>
     <header>
-      <h2>welcome to WelSlack this is the app.jsx page</h2>
-      <UserContainer />
+      <h2>welcome to WeSlack this is the app.jsx page</h2>
+      <h3>user container<UserContainer /></h3>
     </header>
       <Route path="/login" component={LoginFormContainer} />
        <Route path="/signup" component={SignupFormContainer} />

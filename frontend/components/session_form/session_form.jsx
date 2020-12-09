@@ -22,17 +22,17 @@ export default class SessionForm extends React.Component {
   this.props.processForm(user); //TODO:?
   }
 
-  // renderErrors() {
-  //   return(
-  //     <ul>
-  //       {this.props.errors.map((error, i) => (
-  //         <li key={`error-${i}`}>
-  //           {error}
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   );
-  // }
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
 
 
   render() {
@@ -43,7 +43,7 @@ export default class SessionForm extends React.Component {
 
           <br/>
           Please {this.props.formType} or {this.props.navLink}
-          {/* {this.renderErrors()} */}
+          {this.renderErrors()}
           <div className="login-form">
           <br/>
 

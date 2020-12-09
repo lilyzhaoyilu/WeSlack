@@ -21,7 +21,7 @@ import NoMatch from './no_match/no_match'
 const App = () => (
   <div>
     <header>
-    <Link to="/" className="header-link">
+    <Link to="/" className="header-to-main">
         {/* <img src='../../app/assets/images/slack.svg' alt=""/> */}
         <h1>WeSlack and its logo</h1>
       </Link>
@@ -32,7 +32,7 @@ const App = () => (
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       
-      <h3>Welcome to WeSlack<UserContainer /></h3>
+      <Route exact path='/'><UserContainer /></Route>
       
       <Route path="*"><NoMatch /></Route>
       

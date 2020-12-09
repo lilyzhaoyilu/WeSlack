@@ -14,8 +14,8 @@ class User extends React.Component {
 
   const sessionLinks = () => {
     return (
-    <nav className="login-signup">
-      
+    <nav className="user-login-signup">
+      <h3 className="user-login-signup-welcome">Welcome to WeSlack!</h3>
       <Link to="/login">Login</Link>
       &nbsp;or&nbsp;
       <Link to="/signup">Sign up!</Link>

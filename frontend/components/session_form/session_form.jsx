@@ -53,41 +53,44 @@ export default class SessionForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container">
-          Welcome to WeSlack!
-        <button value='demo' onClick={this.handleDemo}>DemoLogin</button>
-        <form onSubmit={this.handleSubmit} className="login-form-box">
+      <div className="session-form-container">
+         <h3> Welcome to WeSlack!</h3>
+        
+        Try <a href="#" onClick={this.handleDemo}>DemoLogin</a>
 
+        <div className="session-error">{this.renderErrors()}</div>
+
+        <form onSubmit={this.handleSubmit} className="session-form-box">
+          
           <br/>
           Please {this.props.formType} or {this.props.navLink}
-          
 
-          {this.renderErrors()}
-          <div className="login-form">
+          <div className="session-form">
+
           <br/>
 
-
-          <label>Username:
-          <input type="text"
+          <label>
+          <input type="text" placeholder="Username"
           value={this.state.username}
           onChange={this.update('username')}
-          className="login-input"/>
+          className="session-input"/>
           </label>
 
           <br/>
 
-          <label>Password:
-          <input type="password"
+          <label>
+          <input type="password" placeholder="Password"
           value={this.state.password}
           onChange={this.update('password')}
-          className="login-input"/>
+          className="session-input"/>
           </label>
 
           <br/>
 
           <input className="session-submit" type="submit" value={this.props.formType}   />
-
           </div>
+
+
         </form>
       </div>
     );

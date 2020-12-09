@@ -8,9 +8,10 @@ class User < ApplicationRecord
   #spire
 
   def self.find_by_credentials(username, password)
-    user = User.find_by_credentials(username: username)
-    user.&is_password?(password) && user
-  end 
+    user = User.find_by(username: username)
+    return nil unless user
+    user.is_password?(password) ? user : nil
+  end
 
   def password=(password)
     @password = password
@@ -32,7 +33,8 @@ class User < ApplicationRecord
   def ensure_session_token
     self.session_token = SecureRandom.urlsafe_base64
   end 
-
+  
+private 
   def set_default_image_url
     self.image_url = 'defaulturl'
   end 

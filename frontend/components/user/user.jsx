@@ -26,10 +26,16 @@ class User extends React.Component {
   
   const personalGreeting = () => {
     let currentId = this.props.currentUser
+    let picturePath = this.props.users[currentId].image_url
     return (
     <hgroup className="header-group">
     <h2 className="header-name">Hi, {this.props.users[currentId].username}</h2>
-      <button className="header-button" onClick={this.props.logout}>Log Out</button>
+
+    <img src={ picturePath === 'defaultpicture' ? window.images.dprofile : picturePath} width="100" height="100"></img>
+    
+
+    <button className="header-button" onClick={this.props.logout}>Log Out</button>
+
     </hgroup>
   )};
 

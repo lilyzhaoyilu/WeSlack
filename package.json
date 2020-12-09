@@ -42,5 +42,8 @@
   "bugs": {
     "url": "https://github.com/lilyzhaoyilu/WeSlack/issues"
   },
-  "homepage": "https://github.com/lilyzhaoyilu/WeSlack#readme"
+  "homepage": "https://github.com/lilyzhaoyilu/WeSlack#readme",
+  "devDependencies": {
+    "file-loader": "^6.2.0"
+  }
 }

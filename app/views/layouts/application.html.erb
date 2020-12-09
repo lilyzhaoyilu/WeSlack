@@ -7,6 +7,13 @@
     <%= stylesheet_link_tag 'application', media: 'all'%>
     
     <%= javascript_include_tag 'application' %>
+
+    <script>
+    window.images = {
+      logo: "<%= asset_path("slack.svg") %>",
+      dprofile: "<%= asset_path("defaultp.jpg") %>"
+    }
+  </script>
   </head>
 
   <body>

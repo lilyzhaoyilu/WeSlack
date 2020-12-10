@@ -36,7 +36,7 @@ class User < ApplicationRecord
   
 private 
   def set_default_image_url
-    self.image_url = 'defaulturl'
+    self.image_url = 'defaultpicture'
   end 
   
   

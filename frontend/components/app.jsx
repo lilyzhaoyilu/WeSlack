@@ -15,26 +15,30 @@ import UserContainer from './user/user_container'
 import LoginFormContainer from './session_form/login_form_container'
 import SignupFormContainer from './session_form/signup_form_container'
 import NoMatch from './no_match/no_match'
+// import logo from '../../../app/assets/images/slack.svg';
+
 
 
 
 const App = () => (
   <div>
     <header>
-    <Link to="/" className="header-to-main">
-        {/* <img src='../../app/assets/images/slack.svg' alt=""/> */}
-        <h1>WeSlack and its logo</h1>
-      </Link>
+    <Link to="/#" className="header-to-main" style={{ textDecoration: 'none' }}>
+      <div className="header-and-name">
+        <img src={window.images.logo} width="100" height="100"></img>
+        <h1> WeSlack</h1>
+      </div>
+    </Link>
       
     </header>
      
-       <Switch>
-      <AuthRoute exact path="/login" component={LoginFormContainer} />
-      <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      
-      <Route exact path='/'><UserContainer /></Route>
-      
-      <Route path="*"><NoMatch /></Route>
+    <Switch>
+    <AuthRoute exact path="/login" component={LoginFormContainer} />
+    <AuthRoute exact path="/signup" component={SignupFormContainer} />
+    
+    <Route exact path='/'><UserContainer /></Route>
+    
+    <Route path="*"><NoMatch /></Route>
       
       
       {/* <ProtectedRoute exact path="/benches/new" component={BenchFormContainer} />

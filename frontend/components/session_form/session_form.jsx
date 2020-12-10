@@ -52,43 +52,47 @@ export default class SessionForm extends React.Component {
 
 
   render() {
+
+    const buttonValue = this.props.formType === 'signup' ? 'Sign Up' : 'Log In'
+
     return (
       <div className="session-form-container">
-         <h3> Welcome to WeSlack!</h3>
         
-        Try <a href="#" onClick={this.handleDemo}>DemoLogin</a>
+        <h1 className="session-welcome"> Welcome to WeSlack</h1>
+        
+        <div className="session-please">Please {this.props.formType} or {this.props.navLink}</div>
+
+        <div className="session-try-demo"> <a href="#" onClick={this.handleDemo}>demo user</a></div>
 
         <div className="session-error">{this.renderErrors()}</div>
 
-        <form onSubmit={this.handleSubmit} className="session-form-box">
+        <form onSubmit={this.handleSubmit} className="session-form">
           
-          <br/>
-          Please {this.props.formType} or {this.props.navLink}
+         
+          
 
-          <div className="session-form">
-
-          <br/>
-
-          <label>
+          
           <input type="text" placeholder="Username"
           value={this.state.username}
           onChange={this.update('username')}
           className="session-input"/>
-          </label>
+          
 
           <br/>
 
-          <label>
+       
+
+          
           <input type="password" placeholder="Password"
           value={this.state.password}
           onChange={this.update('password')}
           className="session-input"/>
-          </label>
+         
 
           <br/>
 
-          <input className="session-submit" type="submit" value={this.props.formType}   />
-          </div>
+          <input className="session-submit" type="submit" value={buttonValue}   />
+          
 
 
         </form>

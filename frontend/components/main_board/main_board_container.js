@@ -6,6 +6,7 @@ import MainBoard from './main_board';
 const mapStateToProps = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
+    users: state.entities.users
   };
 };
 

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import User from '../user/user_container'
 
 
-class TopNavBar extends React.Component {
+class TopBar extends React.Component {
   constructor(props){
     super(props);
   
@@ -17,10 +17,19 @@ class TopNavBar extends React.Component {
     
     <div className="top-navbar">
 
+      <span className="top-navbar-left">
+        <img src={window.images.logo} ></img>WeSlack</span>
+
+      <span className="top-navbar-mid">search bar</span>
+
+      <span className="top-navbar-right">
+         <User/></span>
       
-      <span className="top-user"> <User/></span>
+      
+      
     
-    </div>)
+    </div>
+    )
     
   }
   
@@ -30,4 +39,4 @@ class TopNavBar extends React.Component {
 }
 
 
-export default TopNavBar;
+export default TopBar;

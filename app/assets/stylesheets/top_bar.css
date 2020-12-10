@@ -8,6 +8,11 @@
   justify-content: space-between;
 }
 
+.top-navbar span{
+  display: inline-block;
+  color:white;
+}
+
 .top-navbar img{
   background-color: rgba(29, 28, 29, 0.13);
   background-size: 100%;

@@ -1,20 +1,20 @@
 import { connect } from 'react-redux';
 
-import { logout } from '../../actions/session_actions';
-import User from './user.jsx';
+
+import TopBar from './top_bar';
 
 const mapStateToProps = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
-    users: state.entities.users
+    user: state.users
   };
 };
 
 const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout())
+  
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(User);
+)(TopBar);

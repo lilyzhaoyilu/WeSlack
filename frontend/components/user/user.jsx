@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 
-class UserGreeting extends React.Component {
+class User extends React.Component {
   constructor(props){
     super(props);
     
@@ -18,6 +18,7 @@ class UserGreeting extends React.Component {
 
     return (
     <hgroup className="top-user">
+     
     <h2 className="top-user-name">{this.props.users[currentId].username}</h2>
 
     <img className="top-user-pic"  src={ picturePath === 'defaultpicture' ? window.images.dprofile : picturePath} ></img>
@@ -36,4 +37,4 @@ class UserGreeting extends React.Component {
 };
 
 
-export default UserGreeting;
+export default User;

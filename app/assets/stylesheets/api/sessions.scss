@@ -4,15 +4,22 @@
 
 .session-form-container {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
 }
 
-.header-to-main {
-  text-align: center;
+.session-try-demo, .session-please, .session-error{
+  margin: 5px;
+
 }
 
-.user-login-signup {
-  text-align: center;
+.session-error{
+  color:red;
+  
 }
+
+
 
 .session-submit {
   background-color: #4a1548;
@@ -22,16 +29,14 @@
   font-weight: 900;
   height: 44px;
   min-width: 96px;
-  width: 20%;
+  width: 400px;
   border-radius: 4px;
 }
 
 .session-submit:hover {
   cursor: pointer;
 }
-.session-error li {
-  list-style: none;
-}
+
 
 .session-form {
   position: absolute;
@@ -41,13 +46,14 @@
   width: 100%;
 }
 
-.session-input {
+.session-input{
   border-radius: 4px;
   border: 1px solid #868686;
   transition: border 80ms;
   margin: 0 0 20px;
   box-sizing: border-box;
-  width: 20%;
+  // width: 20%;
+  min-width: 400px;
   border-color: rgb(134, 134, 134);
   border-bottom-style: solid;
   border-bottom-width: 1px;
@@ -56,6 +62,7 @@
   font-stretch: 100%;
 }
 
-.login-input:focus {
+.session-input:focus {
   box-shadow: 0px 0px 5px rgb(18, 100, 163);
+  outline-width: 0;
 }

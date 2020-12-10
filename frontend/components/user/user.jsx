@@ -15,11 +15,12 @@ class User extends React.Component {
   const sessionLinks = () => {
     return (
     <nav className="user-login-signup">
-      <h3 className="user-login-signup-welcome">Welcome to WeSlack!</h3>
+      <h3 className="user-login-signup-welcome">Welcome to WeSlack</h3>
+      <div className="user-login-signup-links">
       <Link to="/login">Login</Link>
       &nbsp;or&nbsp;
-      <Link to="/signup">Sign up!</Link>
-      <Link></Link>
+      <Link to="/signup">Sign up</Link></div>
+     
     </nav>
   )};
 

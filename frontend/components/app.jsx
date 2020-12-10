@@ -23,7 +23,7 @@ import NoMatch from './no_match/no_match'
 const App = () => (
   <div>
     <header>
-    <Link to="/" className="header-to-main">
+    <Link to="/#" className="header-to-main" style={{ textDecoration: 'none' }}>
       <div className="header-and-name">
         <img src={window.images.logo} width="100" height="100"></img>
         <h1> WeSlack</h1>

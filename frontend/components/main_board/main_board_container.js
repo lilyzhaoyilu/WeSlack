@@ -1,12 +1,11 @@
 import { connect } from 'react-redux';
 
 import { logout } from '../../actions/session_actions';
-import UserGreeting from './user.jsx';
+import MainBoard from './main_board';
 
 const mapStateToProps = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
-    users: state.entities.users
   };
 };
 
@@ -17,4 +16,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(UserGreeting);
+)(MainBoard);

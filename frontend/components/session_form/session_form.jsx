@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class SessionForm extends React.Component {
   constructor(props) {
@@ -52,11 +53,19 @@ export default class SessionForm extends React.Component {
 
 
   render() {
+    
 
     const buttonValue = this.props.formType === 'signup' ? 'Sign Up' : 'Log In'
 
     return (
       <div className="session-form-container">
+
+      <Link to="/" className="header-to-main" style={{ textDecoration: 'none' }}>
+        <div className="header-and-name">
+          <img src={window.images.logo} width="50 " height="50"></img>
+          <h1> WeSlack</h1>
+        </div>
+        </Link>
         
         <h1 className="session-welcome"> Welcome to WeSlack</h1>
         

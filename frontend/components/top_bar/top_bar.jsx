@@ -12,7 +12,7 @@ class TopBar extends React.Component {
   
   render() {
     const currentId = this.props.currentUser
-     //#350d36
+     
   return (
     
     <div className="top-navbar">

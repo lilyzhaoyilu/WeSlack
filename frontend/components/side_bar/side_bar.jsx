@@ -10,6 +10,10 @@ class SideBar extends React.Component {
     
   
   }
+
+  componentDidMount(){
+    this.props.fetchChannels(this.props.currentUser)
+  }
   
   render() {
     const currentId = this.props.currentUser

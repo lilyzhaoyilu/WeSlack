@@ -18,10 +18,11 @@ ellie = User.create(username: 'ellie', password: 'ellieisacorgi')
 
 
 generalchannel = Channel.create(name: 'general')
-corgichat = Channel.create(name: 'corgiChat', public: false)
+corgichat = Channel.create(name: 'corgiChat', public: false )
 workchannel = Channel.create(name: 'work')
 randomchannel = Channel.create(name: 'random')
 
-member1 = Member.create(channel_id: corgichat.id, member_id: demo.id)
-member2 = Member.create(channel_id: corgichat.id, member_id: leo.id)
-member3 = Member.create(channel_id: corgichat.id, member_id: chaibot.id)
+member1 = ChannelUser.create(channel_id: 1, user_id: 1)
+# member2 = ChannelUser.create(channel_id: corgichat.id, user_id: leo.id)
+# member3 = ChannelUser.create(channel_id: corgichat.id, user_id: chaibot.id)
+

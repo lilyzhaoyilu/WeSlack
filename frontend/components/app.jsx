@@ -16,34 +16,43 @@ import LoginFormContainer from './session_form/login_form_container'
 import SignupFormContainer from './session_form/signup_form_container'
 import NoMatch from './no_match/no_match'
 import MainBoardContainer from './main_board/main_board_container'
+import SplashContainer from './splash/splash_container'
 
 
 
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-
-const App = () => (
-  <div>
+  render() {
+    return (
+      <div>
    
+    
      
-    <Switch>
-    <AuthRoute exact path="/login" component={LoginFormContainer} />
-    <AuthRoute exact path="/signup" component={SignupFormContainer} />
-    <ProtectedRoute exact path="/client" component={MainBoardContainer}/>
-    <AuthRoute path="/" component={LoginFormContainer} />
-    
-    <Route path="*"><NoMatch /></Route>
+      <Switch>
+      <AuthRoute exact path="/login" component={LoginFormContainer} />
+      <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      <ProtectedRoute exact path="/client" component={MainBoardContainer}/>
+      <Route exact path="/" component={SplashContainer} />
       
+      <Route path="*"><NoMatch /></Route>
+        
       
-      {/* <ProtectedRoute exact path="/benches/new" component={BenchFormContainer} />
-      <Route path="/benches/:benchId" component={BenchShowContainer} />
-      <Route exact path="/" component={SearchContainer} /> */}
-    </Switch>
-
+        {/* <ProtectedRoute exact path="/benches/new" component={BenchFormContainer} />
+        <Route path="/benches/:benchId" component={BenchShowContainer} />
+        <Route exact path="/" component={SearchContainer} /> */}
+      </Switch>
+  
+      
     
   
+    
+    </div>
+    )
+  }
+}
 
-  
-  </div>
-);
 
 export default App;

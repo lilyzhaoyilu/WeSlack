@@ -6,22 +6,24 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content:center;
+  justify-content: center;
+  align-items: center;
 }
 
-.session-try-demo, .session-please, .session-error{
+.session-please, .session-error{
   margin: 5px;
 
 }
 
-.session-error{
-  color:red;
-  
-}
+// .session-error{
+//   display: absolute;
+//   left:200px;
+//   color:red;
+// }
 
 
 
-.session-submit {
+.session-submit,.session-try-demo {
   background-color: #4a1548;
   color: #ffffff;
   padding: 0 16px 3px;
@@ -36,15 +38,32 @@
 .session-submit:hover {
   cursor: pointer;
 }
+.session-try-demo:hover {
+  cursor: pointer;
+}
+.session-please{
+  position: relative;
+  top:230px;
+  // bottom:20px;
+}
+.session-please li{
+  color:red;
+}
 
-
-.session-form {
+.session-below-error{
   position: absolute;
   top: 380px;
   right: 0;
   left: 0px;
   width: 100%;
+  // margin-top: 400px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
 
 .session-input{
   border-radius: 4px;

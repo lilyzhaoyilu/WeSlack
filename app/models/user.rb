@@ -5,7 +5,20 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token, :set_default_image_url
   attr_reader :password
+
+  has_many :channelusers,
+  foreign_key: :user_id,
+  class_name: :ChannelUser
+  
+
+  has_many :channels,
+  through: :channelusers,
+  source: :channel
+  
+
   #spire
+
+  
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
@@ -18,7 +31,7 @@ class User < ApplicationRecord
     self.password_digest = BCrypt::Password.create(password)
   end
 
-  #TODO:how to default an image url when registering
+ 
 
   def is_password?(password)
     BCrypt::Password.new(self.password_digest).is_password?(password)

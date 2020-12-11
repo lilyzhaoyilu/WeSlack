@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class SessionForm extends React.Component {
   constructor(props) {
@@ -28,7 +29,7 @@ export default class SessionForm extends React.Component {
     e.preventDefault();
     
     this.props.processDemo(); 
-    }
+  }
   
   // handleKeypress(e){
   //     //it triggers by pressing the enter key
@@ -52,36 +53,43 @@ export default class SessionForm extends React.Component {
 
 
   render() {
+    
 
     const buttonValue = this.props.formType === 'signup' ? 'Sign Up' : 'Log In'
 
+    // const errorMessages = this.renderErrors() ? " " : this.renderErrors()
     return (
+
+      
       <div className="session-form-container">
+          
+          
+        <Link to="/" className="session-logo" style={{ textDecoration: 'none' }}>
+
+          <div className="session-logo-image">
+            <img src={window.images.logo} width="50 " height="50"></img>
+            <h1> WeSlack</h1>
+          </div>
+        </Link>
+
+
+
         
-        <h1 className="session-welcome"> Welcome to WeSlack</h1>
+        <div className="session-please">Please {this.props.formType} or {this.props.navLink}
         
-        <div className="session-please">Please {this.props.formType} or {this.props.navLink}</div>
 
-        <div className="session-try-demo"> <a href="#" onClick={this.handleDemo}>demo user</a></div>
-
-        <div className="session-error">{this.renderErrors()}</div>
-
+        <div className="session-error" color='red'>{this.renderErrors()}</div></div>
+        
+        <div className="session-below-error">
+        
         <form onSubmit={this.handleSubmit} className="session-form">
-          
-         
-          
-
           
           <input type="text" placeholder="Username"
           value={this.state.username}
           onChange={this.update('username')}
           className="session-input"/>
           
-
           <br/>
-
-       
-
           
           <input type="password" placeholder="Password"
           value={this.state.password}
@@ -92,10 +100,11 @@ export default class SessionForm extends React.Component {
           <br/>
 
           <input className="session-submit" type="submit" value={buttonValue}   />
-          
-
-
+    
         </form>
+        <br></br>
+        <button className="session-try-demo"   onClick={this.handleDemo}>Demo User</button>
+        </div>
       </div>
     );
   }

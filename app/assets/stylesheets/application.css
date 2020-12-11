@@ -65,8 +65,8 @@ table {
 }
 /*reset all////////////////////////////////////////////////////////////*/
 
-.header-and-name {
-  
+.header-and-name, .session-logo-image {
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -74,7 +74,7 @@ table {
   font-size: 34px;
 }
 
-.header-to-main {
+.header-to-main, .session-logo-image {
   text-align: center;
 }
 

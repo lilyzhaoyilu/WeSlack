@@ -1,0 +1,129 @@
+//hide and show form
+
+.cchannel-form, .cchannel-form-bg{
+  display:none;
+}
+
+.cchannel-form-show{
+  display: block;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  margin-left: -220px;
+  width: 360px;
+  padding: 20px;
+  background: #fff;
+  z-index: 3;
+  border-radius: 5px;
+  border: 1px solid #000;
+}
+
+.cchannel-form-show-bg{
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+//end of hide and show form
+
+
+
+
+//the add column button always showing//
+.side-bar-channels-create{
+  border: none;
+  color: inherit;
+  // padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  
+  // font-size: 16px;
+  // margin: 4px 2px;
+  // transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: transparent
+}
+//end the add column button always showing//
+
+//close button for modal/
+.cchannel-button-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 36px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+//end of model close button
+
+
+
+
+
+
+// The switch here //
+.cchannel-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.cchannel-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.cchannel-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.cchannel-slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.cchannel-switch input:checked + .cchannel-slider {
+  background-color: #2196F3;
+}
+
+.cchannel-switch input:focus + .cchannel-slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+.cchannel-switch input:checked + .cchannel-slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+
+.cchannel-slider {
+  border-radius: 34px;
+}
+
+.cchannel-slider:before {
+  border-radius: 50%;
+}

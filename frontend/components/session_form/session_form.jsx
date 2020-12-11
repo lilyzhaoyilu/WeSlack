@@ -29,7 +29,7 @@ export default class SessionForm extends React.Component {
     e.preventDefault();
     
     this.props.processDemo(); 
-    }
+  }
   
   // handleKeypress(e){
   //     //it triggers by pressing the enter key

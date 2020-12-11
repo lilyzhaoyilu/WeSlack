@@ -6,11 +6,13 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: baseline;
 }
 
 .top-navbar span{
   display: inline-block;
   color:white;
+  align-items: baseline;
 }
 
 .top-navbar img{
@@ -28,4 +30,9 @@
   line-height: 22.0002px;
   position: relative;
 
+}
+
+.top-navbar-left img{
+  display:absolute;
+  top:5px;
 }

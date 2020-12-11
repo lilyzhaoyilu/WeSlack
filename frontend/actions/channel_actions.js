@@ -5,7 +5,7 @@ export const RECEIVE_CHANNEL = 'RECEIVE_CHANNEL';
 export const REMOVE_CHANNEL = 'REMOVE_CHANNEL';
 export const RECEIVE_CHANNEL_ERRORS = 'RECEIVE_CHANNEL_ERRORS';
 
-export const receiveChannelErrors = errors => ({
+const receiveChannelErrors = errors => ({
   type: RECEIVE_CHANNEL_ERRORS,
   errors // it is an array
 });
@@ -33,11 +33,19 @@ const removeChannel = (channelId) => {
 }
 
 //Thunk action creators
-export const fetchChannels = (userId) => dispatch => {
-  return ChannelApiUtil.fetchChannels(userId)
-  .then(channels =>dispatch(receiveChannels(channels)), err => (
-    dispatch(receiveChannelErrors(err.responseJSON))))
-}
+export const fetchChannels = (userId) => dispatch => (
+  ChannelApiUtil.fetchChannels(userId)
+  .then(cs =>dispatch(receiveChannels(cs))), err => (
+    dispatch(receiveChannelErrors(err.responseJSON))
+    )
+);
+
+
+
+
+
+
+
 
 export const fetchChannel = (channelId) => dispatch => {
   return ChannelApiUtil.fetchChannel(channelId)

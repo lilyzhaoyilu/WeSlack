@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
-import SideBar from './side_bar';
-import {fetchChannels} from '../../actions/channel_actions'
+import Channel from './channel';
+import {fetchChannel} from '../../../actions/channel_actions'
+
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -12,12 +13,11 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchChannels: (userId) => dispatch(fetchChannels(userId)),
-  
+  fetchChannel: (channelId) => dispatch(fetchChannel(channelId)),
   // fetchchannel : (channelId) => dispatch(ChannelAction.fetchchannel(channelId))
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SideBar);
+)(Channel);

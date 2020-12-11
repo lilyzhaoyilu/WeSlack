@@ -5,8 +5,7 @@ import configureStore from './store/store';
 
 
 ///testing
-import {signup, check, login} from "./util/session_api_util"
-
+import{fetchChannels} from './util/channel_api_utils'
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -25,11 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   ////////////////////////////////TODO:testing and delete
-  window.signup = signup;
-  window.check = check;
-  window.login = login;
+  window.fetchChannels = fetchChannels;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+  window.store =store;
 
 
   ////////////////////////////////

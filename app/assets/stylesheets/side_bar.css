@@ -1,4 +1,6 @@
 .side-bar{
   display:flex;
-  flex-direction:column
+  flex-direction:column;
+  list-style:none;
 }
+

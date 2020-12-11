@@ -18,7 +18,10 @@ class TopBar extends React.Component {
     <div className="top-navbar">
 
       <span className="top-navbar-left">
-        <img src={window.images.logo} ></img>WeSlack</span>
+        <Link to="/">
+          <img src={window.images.logo} ></img><span>WeSlack</span>
+        </Link>
+      </span>
 
       <span className="top-navbar-mid">search bar</span>
 

@@ -7,8 +7,9 @@ class CreateChannel extends React.Component {
     super(props);
    
     this.state = {
-      channel:{name: "",
-      public: true},
+      name: "",
+      description: "",
+      public: true,
       show: "no"
     };
 
@@ -35,45 +36,48 @@ class CreateChannel extends React.Component {
 
 // the toggle in model
   handleToggle(){
-    let channel = {...this.state.channel}
-    if(channel.public === false){
-      channel.public = true;
+    let pub = this.state.public;
+    if(pub === false){
+      pub = true;
     }else{
-      channel.public = false;
+      pub = false;
     }
-    this.setState({channel})
+    this.setState({public: pub})
   }
 
 // updating state value while inputing
   update(field) {
-    return (e => this.setState(({channel: {[field]: e.currentTarget.value}})))
+    return (e => this.setState({[field]: e.currentTarget.value}))
   }
 
 //handle submit form
   handleSubmit(e){
     e.preventDefault();
-    const cchannel = Object.assign({}, this.state.channel);
+    const cchannel = Object.assign({}, this.state);
+    delete cchannel.show;
     this.props.processForm(cchannel); 
+    this.handleNotShow(e);
   }
 
 
   
   render() {
 
-  const showform = this.state.show === "yes"? "cchannel-form-show" : "cchannel-form"
-  const showformbg = this.state.show === "yes"? "cchannel-form-show-bg" : "cchannel-form-bg"
-
+  const showform = this.state.show === "yes"? "cchannel-form-show" : "cchannel-form";
+  const showformbg = this.state.show === "yes"? "cchannel-form-show-bg" : "cchannel-form-bg";
+  const submitButtonStatus = this.state.name === ""? true: false;
   
   
   return (
     
   <div>
-  
     <button className='cchannel-add-channel' onClick={this.handleShow}>add chanel</button>
 
     <div className={showformbg}>
 
     <form onSubmit={this.handleSubmit} className={showform}>
+      <button className='cchannel-button-close' onClick={this.handleNotShow} >X</button>
+      <br/>
         
       <input type="text" placeholder="Channel name"
       value={this.state.name}
@@ -83,15 +87,19 @@ class CreateChannel extends React.Component {
       <br/>
       
       <label className="cchannel-switch">
+        Make it private?
       <input type="checkbox" onChange={this.handleToggle}/>
-      <span className="cchannel-slider">
-      </span>
+      <span className="cchannel-slider"></span>
+      </label>
+
+
+      <label>
+        Description (optional)
+      <input type="text" value={this.state.description} onChange={this.update('description')} className="cchannel-input" placeholder="What's this channel about?"></input>
       </label>
       
-      <button className='cchannel-button-close' onClick={this.handleNotShow}>X</button>
-      <br/>
 
-      <input className="cchannel-submit" type="submit" value="Create Channel"   />
+      <input className="cchannel-submit" type="submit" value="Create Channel"  disabled={submitButtonStatus}  />
 
     </form>
     </div>

@@ -1,16 +1,12 @@
 class Api::ChannelsController < ApplicationController
   # after_create :cast_channel_to_users
   def index
-  
-  if params[:user_id]
-    @channels = current_user.channels 
-    render :index 
-  else 
-    render json:["error"], status: 401
-    #render json: ["Invalid username/password combination"], status: 401
-  end
-    
-     
+    if params[:user_id]
+      @channels = current_user.channels 
+      render :index 
+    else 
+      render json:["error"], status: 401
+    end     
   end
 
   def show
@@ -20,13 +16,16 @@ class Api::ChannelsController < ApplicationController
 
   def create
     @channel = Channel.new(channel_params)
-    @channel.public = @channel.public == "true" ? true : false
-    if @channel.save!
+    # debugger
+    # @channel.public = @channel.public == true ? true : false
+    if @channel.save
       if @channel.public == true
         @users = User.all
         @users.each do |user|
-        ChannelUser.create(channel.id = @channel.id, user_id = user.id)
+          ChannelUser.create(channel_id: @channel.id, user_id: user.id)
         end 
+      else 
+        ChannelUser.create(channel_id: @channel.id, user_id: current_user.id)
       end 
       render :show
     else
@@ -46,9 +45,8 @@ class Api::ChannelsController < ApplicationController
 
   def destroy
     @channel = Channel.find(params[:id])
-
     @channel.destroy
-    redirect_to api/users/()
+    
   end
 
   private

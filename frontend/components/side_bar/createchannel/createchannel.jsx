@@ -46,25 +46,20 @@ class CreateChannel extends React.Component {
 
 // updating state value while inputing
   update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
+    return (e => this.setState(({channel: {[field]: e.currentTarget.value}})))
   }
 
 //handle submit form
   handleSubmit(e){
     e.preventDefault();
     const cchannel = Object.assign({}, this.state.channel);
-    this.props.processForm(cchannel); //TODO:?
+    this.props.processForm(cchannel); 
   }
 
-  componentDidMount() {
-  console.log("createchannel", this.props)
-  console.log("createchannel", this.state)
-  }
+
   
   render() {
-  // console.log(this.state)
+
   const showform = this.state.show === "yes"? "cchannel-form-show" : "cchannel-form"
   const showformbg = this.state.show === "yes"? "cchannel-form-show-bg" : "cchannel-form-bg"
 

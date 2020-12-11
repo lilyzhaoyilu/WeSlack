@@ -1,9 +1,8 @@
 class Api::ChannelsController < ApplicationController
-
+  # after_create :cast_channel_to_users
   def index
   
   if params[:user_id]
-    
     @channels = current_user.channels 
     render :index 
   else 
@@ -21,8 +20,14 @@ class Api::ChannelsController < ApplicationController
 
   def create
     @channel = Channel.new(channel_params)
-
-    if @channel.save
+    @channel.public = @channel.public == "true" ? true : false
+    if @channel.save!
+      if @channel.public == true
+        @users = User.all
+        @users.each do |user|
+        ChannelUser.create(channel.id = @channel.id, user_id = user.id)
+        end 
+      end 
       render :show
     else
       render json: ["invalid creation"], status: 422
@@ -51,4 +56,9 @@ class Api::ChannelsController < ApplicationController
   def channel_params
     params.require(:channel).permit(:name, :public)
   end
+
+  # def cast_channel_to_users
+    
+  #   end 
+  # end 
 end

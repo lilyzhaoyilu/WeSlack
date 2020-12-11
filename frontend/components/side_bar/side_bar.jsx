@@ -26,7 +26,7 @@ class SideBar extends React.Component {
   return (
  
     <div className="side-bar">
-       {console.log("sidebar", this.props)}
+      
       <span className="side-bar-dropdown">{this.props.users[currentId].username}</span>
       
       <span className="side-bar-top">

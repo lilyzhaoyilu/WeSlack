@@ -5,13 +5,10 @@ import {createChannel} from '../../../actions/channel_actions'
 import CreateChannel from './createchannel';
 
 const mapStateToProps = (state, ownProps) => {
-  console.log("container", state)
+  
   return {
     currentUser: state.session.currentUser,
-    users: state.users,
-    test: "test"
-     
-    
+    users: state.users,   
 
   };
 };

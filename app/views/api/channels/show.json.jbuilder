@@ -1,1 +1,1 @@
-json.partial! channel : @channel
+json.partial! "channel", channel: @channel

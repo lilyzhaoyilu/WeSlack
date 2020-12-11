@@ -6,6 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.destroy_all
+Channel.destroy_all
+ChannelUser.destroy_all
+
+generalchannel = Channel.create(name: 'general')
+corgichat = Channel.create(name: 'corgiChat', public: false )
+workchannel = Channel.create(name: 'work')
+randomchannel = Channel.create(name: 'random')
+
+
 
 demo = User.create(username: 'DemoUser', password: 'demouser')
 chatbot = User.create(username: 'chatbot', password: 'demouser')
@@ -14,15 +24,15 @@ leo = User.create(username: 'leothecorgi', password: '666666')
 puff = User.create(username: 'puffthedoge', password: 'puffmombest')
 ellie = User.create(username: 'ellie', password: 'ellieisacorgi')
 
+member1 = ChannelUser.create(channel_id: corgichat.id, user_id: demo.id)
+
+User.all.each do |user|
+  Channel.all.each do |channel|
+    if channel.public == true
+      ChannelUser.create(channel_id: channel.id, user_id: user.id)
+    end 
+  end 
+end 
 
 
-
-generalchannel = Channel.create(name: 'general')
-corgichat = Channel.create(name: 'corgiChat', public: false )
-workchannel = Channel.create(name: 'work')
-randomchannel = Channel.create(name: 'random')
-
-member1 = ChannelUser.create(channel_id: 1, user_id: 1)
-# member2 = ChannelUser.create(channel_id: corgichat.id, user_id: leo.id)
-# member3 = ChannelUser.create(channel_id: corgichat.id, user_id: chaibot.id)
 

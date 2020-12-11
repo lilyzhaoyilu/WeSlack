@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Channel from './channels/channel_container';
-import CreateChannel from './createchannel/createchannel_container'
-
+import CreateChannel from './create_channel/createchannel_container'
+import DirectMessage from './direct_message/direct_message_container'
 
 
 
@@ -48,7 +48,8 @@ class SideBar extends React.Component {
     </span>
 
       <span className="side-bar-direct-messages">
-         direct message</span>
+        Direct messages
+         <DirectMessage /> </span>
     </div>
     )
     

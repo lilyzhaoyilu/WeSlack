@@ -6,6 +6,7 @@ import configureStore from './store/store';
 
 ///testing
 import{fetchChannels} from './util/channel_api_utils'
+import {fetchAllUsers} from './util/user_api_utils'
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -28,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   window.store =store;
+  window.fetchAllUsers = fetchAllUsers;
 
 
   ////////////////////////////////

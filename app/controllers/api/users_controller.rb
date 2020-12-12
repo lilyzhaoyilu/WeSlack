@@ -22,7 +22,12 @@ class Api::UsersController < ApplicationController
 
 
   def index
-    @users = User.all
+    if params[:channel_id]
+      @channel = Channel.find(params[:channel_id])
+      @users = @channel.users
+    else 
+      @users = User.all
+    end 
     render json:@users
   end 
 

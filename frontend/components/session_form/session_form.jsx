@@ -10,7 +10,7 @@ export default class SessionForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
-    // this.handleKeypress = this.handleKeypress.bind(this);
+  
   }
 
   update(field) {
@@ -22,7 +22,7 @@ export default class SessionForm extends React.Component {
   handleSubmit(e){
   e.preventDefault();
   const user = Object.assign({}, this.state);
-  this.props.processForm(user); //TODO:?
+  this.props.processForm(user); 
   }
 
   handleDemo(e){

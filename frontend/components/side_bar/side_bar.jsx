@@ -22,7 +22,12 @@ class SideBar extends React.Component {
   render() {
     const currentId = this.props.currentUser;
     const channels = Object.values(this.props.channels);
+    let restUser = Object.assign({}, this.props.users) ;
     
+    delete restUser[this.props.currentUser]
+    const users = Object.values(restUser);
+    
+    const currentUserName = this.props.users[this.props.currentUser].username;
   return (
  
     <div className="side-bar">
@@ -41,15 +46,17 @@ class SideBar extends React.Component {
   <span className="side-bar-channels">
     Channels</span>
 
-    {channels.map(c => (<Channel key={`side-bar-${c.id}`} name={c.name}></Channel>))}
+    {channels.map(c => (<Channel key={`side-bar-${c.id}`} id={c.id} name={c.name}></Channel>))}
 
     <span
     className="side-bar-channels-create"><CreateChannel />
     </span>
 
-      <span className="side-bar-direct-messages">
+    <span className="side-bar-direct-messages">
         Direct messages
-         <DirectMessage /> </span>
+        <DirectMessage id={this.props.currentUser} username={currentUserName}></DirectMessage>
+        {users.map(u => (<DirectMessage key={`side-bar-${u.id}`} id={u.id} username={u.username}></DirectMessage>))}
+    </span>
     </div>
     )
     

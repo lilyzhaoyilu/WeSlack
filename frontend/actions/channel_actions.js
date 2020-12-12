@@ -5,11 +5,13 @@ export const RECEIVE_CHANNEL = 'RECEIVE_CHANNEL';
 export const REMOVE_CHANNEL = 'REMOVE_CHANNEL';
 export const RECEIVE_CHANNEL_ERRORS = 'RECEIVE_CHANNEL_ERRORS';
 
+
+
+
 const receiveChannelErrors = errors => ({
   type: RECEIVE_CHANNEL_ERRORS,
   errors // it is an array
 });
-
 
 const receiveChannels = (channels) => {
   return {
@@ -24,6 +26,8 @@ const receiveChannel = (channel) => {
     channel
   }
 }
+
+
 
 const removeChannel = (channelId) => {
   return {

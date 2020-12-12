@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Channel from './channel';
 import {fetchChannel} from '../../../actions/channel_actions'
+import {receiveCurrentChannel} from '../../../actions/session_actions'
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -14,7 +15,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   fetchChannel: (channelId) => dispatch(fetchChannel(channelId)),
-  // fetchchannel : (channelId) => dispatch(ChannelAction.fetchchannel(channelId))
+  
 });
 
 export default connect(

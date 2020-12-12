@@ -11,13 +11,14 @@ class WorkSpace extends React.Component {
   }
   
   render() {
-    
+    let display = this.props.currentChannelId ? "channel" : "DM";
   return (
     
     <div className="workspace">
-
-      workspace here 
-      
+      {console.log(this.props)}
+      this is the {display} space 
+      {this.props.currentChannelId}
+      {this.props.currentDMId}
       
       
     

@@ -1,0 +1,35 @@
+.splash-header{
+  background-color: #f6efe8;
+  height: 110%;
+}
+
+.splash-logo-container{
+  height: 20px;
+}
+.splash-logo{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  font-size: 25px;
+  text-decoration: none;
+  color:black;
+}
+
+.session-logo-image {
+  margin-top:20px;
+  text-align: center;
+  width:20px;
+  height:20px;
+}
+
+.splash-one{
+  display: flex;
+  flex-direction: row;
+  background-color: #f6efe8;
+}
+.splash-one img{
+  width: 200px;
+  height: 200px;
+  opacity: 0.7;
+}

@@ -47,9 +47,9 @@ class Splash extends React.Component {
  
     <div className="splash-header">
       
-      <Link to="/" className="header-to-main" style={{ textDecoration: 'none' }}>
-        <div className="header-and-name">
-          <img src={window.images.logo} width="50 " height="50"></img>
+      <Link to="/" className="splash-logo-container" style={{ textDecoration: 'none' }} color='inherit'>
+        <div className="splash-logo">
+          <img className='splash-logo-image' src={window.images.logo} ></img>
           <h1> WeSlack</h1>
         </div>
       </Link>
@@ -58,13 +58,13 @@ class Splash extends React.Component {
         <br></br>
         <div className="splash-one">
           <div className="splash-one-words">
-            <img src={window.images.wfh1} width="100 " height="100"></img>
-        <span className="splash-one-weslack">WeSlack Connect</span>
-        <span className="splash-one-build">Build stronger relationships with external partners</span>
-        <span className="splash-one-speed">Speed up communication and work more securely with your partners by inviting them to a channel in Slack.</span>
-        </div>
+           
+          <span className="splash-one-weslack">WeSlack</span>
+          <span className="splash-one-clone">A clone of slack, a demo project</span>
+          <span className="splash-one-speed">It uses React, Redux, JavaScript, CSS, HTML, Ruby on Rails, and PostgreSQL</span>
+          </div>
         <div className="splash-one-image">
-
+          <img src={window.images.wfh1} width="100 " height="100"></img>
         </div>
         </div>
         

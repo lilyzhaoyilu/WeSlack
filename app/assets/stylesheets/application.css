@@ -65,18 +65,6 @@ table {
 }
 /*reset all////////////////////////////////////////////////////////////*/
 
-.header-and-name, .session-logo-image {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  font-size: 34px;
-}
-
-.header-to-main, .session-logo-image {
-  text-align: center;
-}
 
 .user-login-signup-welcome, .session-welcome {
   display:block;

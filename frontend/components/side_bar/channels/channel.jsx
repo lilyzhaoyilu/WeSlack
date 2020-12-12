@@ -14,7 +14,7 @@ class Channel extends React.Component {
   return (
      
     <li>
-      <Link style={{ textDecoration: 'none' }} to={`/client/channel/${this.props.id}`}>{this.props.name}</Link>
+      <Link style={{textDecoration:'none', color:'inherit'}} to={`/client/channel/${this.props.id}`}>{this.props.name}</Link>
     </li>
     
   )

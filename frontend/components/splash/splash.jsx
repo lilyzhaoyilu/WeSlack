@@ -58,6 +58,7 @@ class Splash extends React.Component {
         <br></br>
         <div className="splash-one">
           <div className="splash-one-words">
+            <img src={window.images.wfh1} width="100 " height="100"></img>
         <span className="splash-one-weslack">WeSlack Connect</span>
         <span className="splash-one-build">Build stronger relationships with external partners</span>
         <span className="splash-one-speed">Speed up communication and work more securely with your partners by inviting them to a channel in Slack.</span>

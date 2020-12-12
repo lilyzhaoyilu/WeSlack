@@ -1,35 +1,125 @@
-.splash-header{
+.splash-header, .splash-content-one{
   background-color: #f6efe8;
-  height: 110%;
+  padding-left:40px;
+  padding-right: 40px;
+  padding-top: 30px;
+}
+.splash-header{
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 25px;
 }
 
-.splash-logo-container{
-  height: 20px;
+.splash-header-left{
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0;
 }
+
 .splash-logo{
   display: flex;
   flex-direction: row;
   justify-content: left;
-  align-items: center;
-  font-size: 25px;
   text-decoration: none;
   color:black;
+  padding-right:5px;
+  
 }
-
-.session-logo-image {
-  margin-top:20px;
-  text-align: center;
-  width:20px;
-  height:20px;
-}
-
-.splash-one{
+.splash-logo-bro{
   display: flex;
   flex-direction: row;
-  background-color: #f6efe8;
 }
-.splash-one img{
-  width: 200px;
-  height: 200px;
+
+.splash-logo-bro h2{
+  padding-left: 5px;
+  padding-right:10px;
+}
+///the logo img
+.splash-logo img{
+  padding-right: 5px;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  bottom:10px;
+  
+}
+
+.splash-header-right{
+  background-color: #611f69;
+  color: #ffffff;
+  padding: 0 16px 3px;
+  font-size: 18px;
+  
+  height: 44px;
+  min-width: 40px;
+  width: 190px;
+  border-radius: 4px;
+  
+}
+
+.splash-header-right div{
+  white-space: nowrap;
+  font-weight: 700;
+  letter-spacing:.8px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align:center;
+  cursor:pointer;
+  border: none;
+  padding: 16px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////// contents
+
+.splash-content-one,.splash-content-two,.splash-content-three{
+  display: flex;
+  flex-direction: row;
+  padding-top: 40px;
+  padding-bottom:40px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.splash-one-weslack,.splash-two-features,.splash-three-about{
+  font-weight: 700;
+  font-size:calc(2rem + (18 * (100vw - 400px)/ 624));
+  line-height:1.1875;
+  letter-spacing: -0.8px;
+  padding-top: 10px;
+}
+
+.splash-one-clone,.splash-one-framworks,.splash-content-two-features,.splash-content-three-introduction{
+  font-size:calc(1.125rem + (2 * (100vw - 400px)/ 624));
+  line-height:1;
+  letter-spacing: -0.2px;
+  max-width: 27rem;
+}
+
+
+.splash-content-one img,.splash-content-two img,.splash-content-three-image img{
+  width:calc(35vw);
+  height: calc(35vw);
   opacity: 0.7;
+  padding-left:30px;
+  padding-right:30px;
+ 
+}
+
+.splash-one-words,.splash-two-words{
+  padding-top: 30px;
+}
+
+.splash-content-three{
+  background-color: #f1f0e2;
 }

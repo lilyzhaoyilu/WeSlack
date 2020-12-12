@@ -17,7 +17,7 @@ import SignupFormContainer from './session_form/signup_form_container';
 import NoMatch from './no_match/no_match';
 import MainBoardContainer from './main_board/main_board_container';
 import SplashContainer from './splash/splash_container';
-import WorkSpaceContainer from './workspace/workspace_container';
+// import WorkSpaceContainer from './workspace/workspace_container';
 
 
 class App extends React.Component {

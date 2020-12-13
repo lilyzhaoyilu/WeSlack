@@ -12,6 +12,7 @@ const mapStateToProps = (state, ownProps) => {
     users: state.entities.users,
     channels: state.entities.channels,
     
+    
    
   };
 };

@@ -48,9 +48,9 @@ class SideBar extends React.Component {
 
     {channels.map(c => (<Channel key={`side-bar-${c.id}`} id={c.id} name={c.name}></Channel>))}
 
-    <span
+    <div
     className="side-bar-channels-create"><CreateChannel />
-    </span>
+    </div>
 
     <span className="side-bar-direct-messages">
         Direct messages

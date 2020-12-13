@@ -18,14 +18,23 @@ class Channel extends React.Component {
   }
   
   render() {
+    const imageDisplay = () => {
+      let id = this.props.id;
+      let res = this.props.channels[id].public;
+      if (res === true){
+        return  <img src={window.images.jinghao}width="25 " height="25"></img>
+      }else{
+        return <img src={window.images.lock}  width="25 " height="25"></img>
+      }
+    }
    
 
   return (
     <div>
       
-     
+      {imageDisplay()}
     <li>
-
+    
     <button style={{textDecoration:'none', color:'inherit'}} onClick={this.handleClick}>{this.props.name}</button>
     </li>
     </div>

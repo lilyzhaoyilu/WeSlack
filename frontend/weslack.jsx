@@ -5,9 +5,11 @@ import configureStore from './store/store';
 
 
 ///testing
-import{fetchChannels} from './util/channel_api_utils'
-import {fetchAllUsers} from './util/user_api_utils'
-import {fetchMessages} from './util/cmessage_api_utils'
+import{fetchChannels} from './util/channel_api_utils';
+import {fetchAllUsers} from './util/user_api_utils';
+import {fetchMessages} from './util/cmessage_api_utils';
+import {fetchChannelUsers, deleteChannelUser, createChannelUser} from './util/channeluser_api_utils'
+
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -32,6 +34,9 @@ document.addEventListener("DOMContentLoaded", () => {
   window.store =store;
   window.fetchAllUsers = fetchAllUsers;
   window.fetchMessages = fetchMessages;
+  window.fetchChannelUsers = fetchChannelUsers;
+  window.createChannelUser = createChannelUser;
+  window.deleteChannelUser = deleteChannelUser;
  
 
   ////////////////////////////////

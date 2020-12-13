@@ -11,7 +11,6 @@ const configureStore = (preloadedState = {}) => (
   )
 );
 
-export default configureStore;
 
 
 
@@ -24,5 +23,8 @@ export default configureStore;
 //     rootReducer,
 //     preloadedState,
 //     applyMiddleware(...middleware) //
-//   ))
-// };
+//     ))
+//   };
+  
+  
+export default configureStore;

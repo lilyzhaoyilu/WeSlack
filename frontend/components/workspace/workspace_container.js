@@ -1,7 +1,11 @@
 import { connect } from 'react-redux';
 import WorkSpace from './workspace';
-import {fetchCMessages} from '../../actions/cmessage_actions'
 import { withRouter } from "react-router";
+
+import {createChannelUser, deleteChannelUser} from '../../actions/channeluser_actions'
+
+
+
 const mapStateToProps = (state, ownProps) => {
  
   return {
@@ -10,13 +14,15 @@ const mapStateToProps = (state, ownProps) => {
     currentChannel: state.entities.channels[ownProps.match.params.channelId],
     currentChannelId: ownProps.match.params.channelId,
     currentDMId: ownProps.match.params.dmId,
-    cmessages: state.entities.cmessages
+    cmessages: state.entities.cmessages,
+    channelusers: state.entities.channelusers
     
   };
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchCMessages: (channelId) => dispatch(fetchCMessages(channelId))
+  createChannelUser: (channelId, userId) => dispatch(createChannelUser(channelId, userId)),
+  deleteChannelUser: (channelId, userId) => dispatch(deleteChannelUser(channelId, userId)),
 });
 
 export default withRouter(connect(

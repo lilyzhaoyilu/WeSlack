@@ -2,7 +2,6 @@ class Api::UsersController < ApplicationController
   
   def create
     @user = User.new(user_params)
-    @channels = Channel.where(public: true)
 
     if @user.save
       login(@user) 
@@ -17,18 +16,15 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    render json:@user
+    render :show
   end 
 
 
   def index
-    if params[:channel_id]
-      @channel = Channel.find(params[:channel_id])
-      @users = @channel.users
-    else 
-      @users = User.all
-    end 
-    render json:@users
+    @users = User.all
+    
+    
+    render :index
   end 
 
   private

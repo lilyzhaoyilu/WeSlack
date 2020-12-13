@@ -70,37 +70,50 @@ class CreateChannel extends React.Component {
   
   return (
     
-  <div>
+  <div className="createchannel">
+    
     <button className='cchannel-add-channel' onClick={this.handleShow}>add chanel</button>
+    
 
-    <div className={showformbg}>
 
+
+    {/* the modal below */}
+    <div className={showformbg}> 
+
+    
     <form onSubmit={this.handleSubmit} className={showform}>
+
       <button className='cchannel-button-close' onClick={this.handleNotShow} >X</button>
-      <br/>
-        
-      <input type="text" placeholder="Channel name"
+
+      <div className='cchannel-flexpart'>
+      <h3 className='cchannel-flexpart1'>Create a channel</h3>
+      <div className='cchannel-flexpart2'>Channels are where your team coomunicates. They're best when organized arounda topic.</div>
+      
+      <div className='cchannel-flexpart3'>
+      <label>Name</label>
+      <input type="text" placeholder="# e.g. monthly-plan"
       value={this.state.name}
       onChange={this.update('name')}
-      className="cchannel-input"/>
+      className="cchannel-input"/></div>
       
-      <br/>
-      
-      <label className="cchannel-switch">
-        Make it private?
-      <input type="checkbox" onChange={this.handleToggle}/>
-      <span className="cchannel-slider"></span>
-      </label>
-
-
-      <label>
-        Description (optional)
+      <div className='cchannel-flexpart4'>
+      <label>Description (optional)</label>
       <input type="text" value={this.state.description} onChange={this.update('description')} className="cchannel-input" placeholder="What's this channel about?"></input>
+      </div>
+      
+      <div className='cchannel-flexpart5'>
+      <div> Make it private?</div>
+      <label className="cchannel-switch">        
+        <input type="checkbox" onChange={this.handleToggle}/>
+        <span className="cchannel-slider"></span>
       </label>
+      </div>
+
+      <div className='cchannel-flexpart6'>
+      <input className="cchannel-submit" type="submit" value="Create Channel"  disabled={submitButtonStatus}  /></div>
       
 
-      <input className="cchannel-submit" type="submit" value="Create Channel"  disabled={submitButtonStatus}  />
-
+      </div>
     </form>
     </div>
   

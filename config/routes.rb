@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
     resources :channels, only: [:create, :show, :destroy, :update] do 
       resources :users, only: [:index]
+      resources :cmessages, only: [:create, :index]
     end 
 
     resources :channel_users, only: [:create, :index]

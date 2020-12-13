@@ -7,6 +7,7 @@ import configureStore from './store/store';
 ///testing
 import{fetchChannels} from './util/channel_api_utils'
 import {fetchAllUsers} from './util/user_api_utils'
+import {fetchMessages} from './util/cmessage_api_utils'
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -30,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.dispatch = store.dispatch;
   window.store =store;
   window.fetchAllUsers = fetchAllUsers;
+  window.fetchMessages = fetchMessages;
  
 
   ////////////////////////////////
@@ -40,3 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
   ReactDOM.render(<Root store={store} />, root);
 });
+
+
+
+
+

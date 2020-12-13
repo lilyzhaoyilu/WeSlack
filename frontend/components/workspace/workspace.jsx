@@ -7,22 +7,29 @@ class WorkSpace extends React.Component {
   constructor(props){
     super(props);
   }
+
+  componentDidMount(){
+    this.props.fetchCMessages(this.props.currentChannelId);
+  }
   
   render() {
     const display = this.props.currentChannelId ? "channel" : "DM";
     const name = this.props.currentChannel
+    const messages = Object.values(this.props.cmessages)
     
   return (
     
     <div className="workspace">
-      
+     
       <div className="workspace-header">
       <WorkSpaceHeader displaytype={display} displayname={name} />
       </div>
-      {console.log(this.props)}
+     
       this is the {display} space 
       {this.props.currentChannelId}
       {this.props.currentDMId}
+      
+      {messages.map((message=>(<li>{message.body}</li>)))}
       
       
     

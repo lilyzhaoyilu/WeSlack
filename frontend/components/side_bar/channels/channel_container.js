@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from "react-router";
 import Channel from './channel';
 import {fetchChannel} from '../../../actions/channel_actions'
 import {fetchCMessages} from '../../../actions/cmessage_actions'
@@ -17,7 +18,7 @@ const mapDispatchToProps = dispatch => ({
   fetchCMessages: (channelId) => dispatch(fetchCMessages(channelId))
 });
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(Channel);
+)(Channel));

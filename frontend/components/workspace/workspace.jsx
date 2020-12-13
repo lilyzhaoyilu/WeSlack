@@ -8,9 +8,9 @@ class WorkSpace extends React.Component {
     super(props);
   }
 
-  componentDidMount(){
-    this.props.fetchCMessages(this.props.currentChannelId);
-  }
+  // componentDidUpdate(){
+  //   this.props.fetchCMessages(this.props.currentChannelId)
+  // }
   
   render() {
     const display = this.props.currentChannelId ? "channel" : "DM";
@@ -20,7 +20,7 @@ class WorkSpace extends React.Component {
   return (
     
     <div className="workspace">
-     
+    
       <div className="workspace-header">
       <WorkSpaceHeader displaytype={display} displayname={name} />
       </div>
@@ -29,7 +29,7 @@ class WorkSpace extends React.Component {
       {this.props.currentChannelId}
       {this.props.currentDMId}
       
-      {messages.map((message=>(<li>{message.body}</li>)))}
+      {messages.map((message=>(<li key={`channel-${this.props.currentChannel}-message-${message.id}`}>{message.body}</li>)))}
       
       
     

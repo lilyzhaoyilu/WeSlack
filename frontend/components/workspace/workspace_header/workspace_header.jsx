@@ -10,19 +10,7 @@ class WorkSpaceHeader extends React.Component {
   
   render() {
   
-  // const channelHeader = () => {
-    
-  //   return(
-  //     <div className="channel-header">
-  //       {this.props.displayname}
-  //     </div>
-  //   )
-
-  // }
-
-  // const dmHeader = () => {
-
-  // }
+ 
    
   return (
     

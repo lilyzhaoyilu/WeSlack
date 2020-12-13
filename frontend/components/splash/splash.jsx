@@ -7,46 +7,24 @@ import { Link, Redirect } from 'react-router-dom';
 class Splash extends React.Component {
 constructor(props){
     super(props);
-    // this.handleDemo = this.handleDemo.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
+    // this.mark= React.createRef();
+    // this.focusMark = this.focusMark.bind(this);
     
   
   }
 
-  // handleDemo(e){
-  //   e.preventDefault();
-  //   this.props.processDemo();     
+  handleDemo(e){
+    e.preventDefault();
+    this.props.processDemo().then(() => this.props.history.push(`/client/`));
+  }
+
+  // focusMark(){
+  //   this.mark.current.focus();
   // }
   
   render() {
-    // const currentId = this.props.currentUser
-    // console.log(this.props)
-
-    // const sessionLinks = () => {
-    //   return (
-    //   <nav className="splash-session-container">
-    //     <div className="splash-links">
-    //     <Link to="/login">Login</Link>
-    //     &nbsp;or&nbsp;
-    //     <Link to="/signup">Sign up</Link></div>       
-    //   </nav>
-    // )};
-  
-    
-    // const personalGreeting = () => {
-    //   let currentId = this.props.currentUser
-    //   let picturePath = this.props.users[currentId].image_url
-    //   return (
-    //   <hgroup className="header-group">
-    //   <h2 className="header-name">Hi, {this.props.users[currentId].username}</h2>
-  
-    //   <img src={ picturePath === 'defaultpicture' ? window.images.dprofile : picturePath} width="100" height="100"></img>
-      
-  
-    //   <button className="header-button" onClick={this.props.logout}>Log Out</button>
-  
-    //   </hgroup>
-    // )};
-
+   
   return (
     <div className="splash">
       <div className="splash-header">
@@ -59,15 +37,18 @@ constructor(props){
         </Link>
 
         <div className="splash-logo-bro">
-          <h2> <Link to='/#content-two'>Feature</Link></h2>
+          <h2>Features</h2>
+          {/* <h2> <button onClick={this.focusMark}>Feature</button></h2> */}
           <h2> About Me</h2>
           
         </div>
         </div>
 
         <div className='splash-header-right'>
-        <Link to="/login" style={{ textDecoration: 'none' }} color='inherit'><div>Launch WeSlack</div></Link>
-        {/* <button className="session-try-demo"   onClick={this.handleDemo}>Demo User</button> */}
+
+
+        <button onClick={this.handleDemo}>Try Demo</button>
+        <Link to='/login'>Launch WeSlack</Link>
        
         </div>
         
@@ -98,8 +79,8 @@ constructor(props){
           <img src={window.images.feature2}></img>
       </div>
 
-      <div className="splash-two-words">
-        <div className="splash-two-features">Key features</div>
+      <div className="splash-two-words" >
+        <div className="splash-two-features" ref={this.mark}>Key features</div>
         <br></br>
         <div className="splash-content-two-features">It uses React, Redux, JavaScript, CSS, HTML, Ruby on Rails, and PostgreSQL
         <br></br>

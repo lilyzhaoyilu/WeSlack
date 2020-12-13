@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 
 
@@ -10,9 +10,10 @@ class Channel extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(event){
+handleClick(event){
     event.preventDefault();
-    this.props.fetchCMessages(this.props.id)
+    this.props.fetchCMessages(this.props.id).then(() => this.props.history.push(`/client/channel/${this.props.id}`));
+
   }
   
   render() {
@@ -20,7 +21,8 @@ class Channel extends React.Component {
   return (
      
     <li>
-      <Link style={{textDecoration:'none', color:'inherit'}} to={`/client/channel/${this.props.id}`} onClick={this.handleClick}>{this.props.name}</Link>
+
+    <button style={{textDecoration:'none', color:'inherit'}} onClick={this.handleClick}>{this.props.name}</button>
     </li>
     
   )

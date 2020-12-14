@@ -10,35 +10,31 @@ class WorkSpace extends React.Component {
     super(props);
   }
 
-  componentDidMount(){
-    this.props.fetchChannelUsers(this.props.match.params.channelId)
-    this.props.fetchCMessages(this.props.match.params.channelId)
-  }
+  // componentDidMount(){
+  //   this.props.fetchChannelUsers(this.props.match.params.channelId)
+  //   this.props.fetchCMessages(this.props.match.params.channelId)
+  // }
 
-  componentDidUpdate(prevProps){
-    if (prevProps.match.params.channelId !== this.props.match.params.channelId){
-      this.props.fetchChannelUsers(this.props.match.params.channelId)
-      this.props.fetchCMessages(this.props.match.params.channelId)
-    }
-  }
+  // componentDidUpdate(prevProps){
+  //   if (prevProps.match.params.channelId !== this.props.match.params.channelId){
+  //     this.props.fetchChannelUsers(this.props.match.params.channelId)
+  //     this.props.fetchCMessages(this.props.match.params.channelId)
+  //   }
+  // }
   
   render() {
-    const display = this.props.currentChannelId ? "channel" : "DM";
-    const name = this.props.currentChannel
-    const messages = Object.values(this.props.cmessages)
-    const channelusers = Object.values(this.props.channelusers).map(e => <li key={`channelusers-${e.userId}`}>{e.userId}</li>)
-    const currentMemberAmount =  Object.values(this.props.channelusers).length
+   
     
   return (
     
     <div className="workspace">
     
       <div className="workspace-header">
-      <WorkSpaceHeader displaytype={display} displayname={name} amount={currentMemberAmount} />
+      <WorkSpaceHeader />
       </div>
      
       <div className="workspace-body">
-      <div>channel user here {channelusers}</div>
+      <div>channel user here </div>
       <Message />
       <MessageForm />
       </div>

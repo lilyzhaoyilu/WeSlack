@@ -7,9 +7,27 @@ class Message extends React.Component {
     super(props);
   
   }
+  componentDidMount(){
+    console.log("messagejsx", this.props)
+    if(this.props.match.params.channelId){
+    // this.props.fetchChannelUsers(this.props.match.params.channelId)
+    this.props.fetchCMessages(this.props.match.params.channelId)}
+    else if(this.props.match.params.dmId){
+      this.props.fetchDMessages(this.props.currentUser, this.props.match.params.dmId)
+    }
+  }
+
+  componentDidUpdate(prevProps){
+    if (this.props.match.params.channelId){
+    if (prevProps.match.params.channelId !== this.props.match.params.channelId){
+      // this.props.fetchChannelUsers(this.props.match.params.channelId)
+      this.props.fetchCMessages(this.props.match.params.channelId)
+    }}else if(this.props.match.params.dmId){if (prevProps.match.params.dmId !== this.props.match.params.dmId){
+      this.props.fetchDMessages(this.props.currentUser,this.props.match.params.dmId)}}
+  }
   
   render() {
-    const messages = Object.values(this.props.cmessages)
+    const messages = Object.values(this.props.messages)
  
   return (
     

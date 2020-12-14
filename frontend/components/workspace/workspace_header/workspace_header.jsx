@@ -8,9 +8,18 @@ class WorkSpaceHeader extends React.Component {
   this.handleLeaveChannel = this.handleLeaveChannel.bind(this);
   }
 
-  // componentDidMount(){
-  //   const name 
-  // }
+  componentDidMount(){
+    
+    if(this.props.match.params.channelId){
+    this.props.fetchChannelUsers(this.props.match.params.channelId)
+  }};
+
+  componentDidUpdate(prevProps){
+    if (this.props.match.params.channelId){
+    if (prevProps.match.params.channelId !== this.props.match.params.channelId){
+      this.props.fetchChannelUsers(this.props.match.params.channelId)
+    }}
+  };
 
   handleLeaveChannel(){
     console.log("ws header", this.props)
@@ -18,9 +27,18 @@ class WorkSpaceHeader extends React.Component {
   }
   
   render() {
+    const channelusers = () => { 
+      if (this.props.currentChannel){
+        return(
+      Object.values(this.props.channelusers).map(e => <li key={`channelusers-${e.userId}`}>{e.userId}</li>))}
+    else{
+      return (<div></div>)
+    }}
+    const currentMemberAmount =  Object.values(this.props.channelusers).length
+
     const currentChannel = () => {
       if(this.props.currentChannel){
-        return (<div>{this.props.channels[this.props.currentChannelId].name}</div>)
+        return (<div>{this.props.channels[this.props.currentChannel.id].name}</div>)
       }else{
         return (<div></div>)
       }
@@ -30,17 +48,12 @@ class WorkSpaceHeader extends React.Component {
   return (
     
     <div className="workspace-header">
-     
-     
-      {console.log("wp header",this.props.currentChannelId)}
-      {/* {console.log("wp header object", this.props.currentChannel.name)} */}
-
-      {currentChannel()}
+           
       
       
       <div className="workspace-header-left">
-        <div className="workspace-header-name">name does not work</div>
-        <div className="workspace-header-description"></div>
+        <div className="workspace-header-name">{currentChannel()}</div>
+        <div className="workspace-header-description">{channelusers()}</div>
       </div>
       
       

@@ -15,7 +15,9 @@ Rails.application.routes.draw do
 
     resources :channel_users, only: [:index, :create, :destroy]
 
-    resources :dm_channels, only: [:create,:show]
+    
+
+    resources :dmessages, only: [:create, :index, :update, :show]
       
       
     

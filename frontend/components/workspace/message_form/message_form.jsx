@@ -31,11 +31,18 @@ class MessageForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    const cmessage = Object.assign({}, this.state, {channel_id: this.props.currentChannel,author_id: this.props.currentUser});
+    if (this.props.currentChannel){
+    const message = Object.assign({}, this.state, {channel_id: this.props.currentChannel.id, author_id: this.props.currentUser});
+    this.props.createCMessage(message);}
+    else if(this.props.currentDM){
+      const message = Object.assign({}, this.state, {receiver_id: this.props.currentDM, author_id:this.props.currentUser});
+      console.log("created message", message);
+      this.props.createDMessage(message)
+    }
     this.setState({
       body:""
     })
-    this.props.createCMessage(cmessage);    
+      
   }
 
  

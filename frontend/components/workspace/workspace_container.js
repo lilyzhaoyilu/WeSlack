@@ -2,8 +2,8 @@ import { connect } from 'react-redux';
 import WorkSpace from './workspace';
 import { withRouter } from "react-router";
 
-import {createChannelUser, deleteChannelUser} from '../../actions/channeluser_actions'
-
+import {fetchCMessages} from '../../actions/cmessage_actions';
+import {createChannelUser,fetchChannelUsers, deleteChannelUser} from '../../actions/channeluser_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -23,6 +23,9 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => ({
   createChannelUser: (channelId, userId) => dispatch(createChannelUser(channelId, userId)),
   deleteChannelUser: (channelId, userId) => dispatch(deleteChannelUser(channelId, userId)),
+  fetchCMessages: (channelId) => dispatch(fetchCMessages(channelId)),
+  fetchChannelUsers: (channelId) => dispatch(fetchChannelUsers(channelId)),
+  
 });
 
 export default withRouter(connect(

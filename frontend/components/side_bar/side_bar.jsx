@@ -13,9 +13,9 @@ class SideBar extends React.Component {
    
   }
 
-  componentDidMount(){
-    this.props.fetchChannels(this.props.currentUser);
-  }
+  // componentDidMount(){
+  //   this.props.fetchChannels(this.props.currentUser);
+  // }
 
  
   
@@ -28,6 +28,7 @@ class SideBar extends React.Component {
     const users = Object.values(restUser);
     
     const currentUserName = this.props.users[this.props.currentUser].username;
+    
   return (
  
     <div className="side-bar">

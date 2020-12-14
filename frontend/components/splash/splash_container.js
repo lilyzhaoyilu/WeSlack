@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout()),
+  
   processDemo: ()=> dispatch(loginDemo())
 });
 

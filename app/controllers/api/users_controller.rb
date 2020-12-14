@@ -2,12 +2,10 @@ class Api::UsersController < ApplicationController
   
   def create
     @user = User.new(user_params)
-
+    @channel = Channel.find_by(name: "general")
     if @user.save
       login(@user) 
-      @channels.each do |channel|
-        ChannelUser.create(user_id: @user.id, channel_id: channel.id)
-      end 
+      ChannelUser.create(user_id: @user.id, channel_id: @channel.id)
       render 'api/users/show'
     else 
       render json: @user.errors.full_messages, status: 422
@@ -22,8 +20,6 @@ class Api::UsersController < ApplicationController
 
   def index
     @users = User.all
-    
-    
     render :index
   end 
 

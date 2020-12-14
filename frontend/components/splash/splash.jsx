@@ -25,9 +25,13 @@ constructor(props){
   
   render() {
    
+
   return (
+
     <div className="splash">
+      
       <div className="splash-header">
+        
         <div className="splash-header-left">
         <Link to="/" className="splash-logo-container" style={{ textDecoration: 'none' }} color='inherit'>
           <div className="splash-logo">

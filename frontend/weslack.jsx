@@ -2,13 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Root from './components/root';
 import configureStore from './store/store';
-
+// import { BrowserRouter } from 'react-router-dom' 
 
 ///testing
 import{fetchChannels} from './util/channel_api_utils';
 import {fetchAllUsers} from './util/user_api_utils';
 import {fetchMessages} from './util/cmessage_api_utils';
 import {fetchChannelUsers, deleteChannelUser, createChannelUser} from './util/channeluser_api_utils'
+import {createMessage} from './util/cmessage_api_utils'
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -27,6 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
+  
+
   ////////////////////////////////TODO:testing and delete
   window.fetchChannels = fetchChannels;
   window.getState = store.getState;
@@ -37,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.fetchChannelUsers = fetchChannelUsers;
   window.createChannelUser = createChannelUser;
   window.deleteChannelUser = deleteChannelUser;
+  window.createMessage = createMessage;
  
 
   ////////////////////////////////
@@ -45,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   const root = document.getElementById("root");
-  ReactDOM.render(<Root store={store} />, root);
+  ReactDOM.render(  <Root store={store} />,  root);
 });
 
 

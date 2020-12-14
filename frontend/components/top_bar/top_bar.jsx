@@ -7,29 +7,28 @@ import User from '../user/user_container'
 class TopBar extends React.Component {
   constructor(props){
     super(props);
-  
   }
-  
+
+
   render() {
-    const currentId = this.props.currentUser
+    
      
   return (
-    
     <div className="top-navbar">
 
-      <span className="top-navbar-left">
+      <div className="top-navbar-left">
         <Link to="/">
-          <img src={window.images.logo} ></img><span>WeSlack</span>
+          <img src={window.images.logo} ></img>
+          <div>WeSlack</div>
         </Link>
-      </span>
+      </div>
 
-      <span className="top-navbar-mid">search bar</span>
+      <div className="top-navbar-mid">search bar
+      </div>
 
-      <span className="top-navbar-right">
-         <User/></span>
-      
-      
-      
+      <div className="top-navbar-right">
+      <User/>
+      </div>
     
     </div>
     )

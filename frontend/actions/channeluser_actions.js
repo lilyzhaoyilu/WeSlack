@@ -11,10 +11,10 @@ const receiveChannelUsers = (channelusers) => ({
 });
 
 
-const removeChannelUser = (userId) => ({
-  type: REMOVE_CHANNEL_USER,
-  userId
-});
+// const removeChannelUser = (userId) => ({
+//   type: REMOVE_CHANNEL_USER,
+//   userId
+// });
 
 export const fetchChannelUsers = (channelId, userId) => dispatch => {
   return ChannelUserApiUtil.fetchChannelUsers(channelId, userId)

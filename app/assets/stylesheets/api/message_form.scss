@@ -1,0 +1,37 @@
+.messageform-form-container{
+  // position: relative;
+  width: 100%;
+ 
+}
+
+.messageform-form{
+  position: relative;
+  background-color:red;
+  bottom: 0;
+}
+
+.messageform-form textarea{
+  position: absolute;
+  width: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+  outline: none;
+  resize: none;
+  height:100px;
+  
+}
+.messageform-form img{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+}
+.messageform-form button{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+}
+

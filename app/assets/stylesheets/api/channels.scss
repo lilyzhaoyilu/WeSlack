@@ -1,3 +1,26 @@
 // Place all the styles related to the api/channels controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.side-bar-channel button{
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.side-bar-channel{
+  display: block;
+  // flex-direction: row;
+  white-space:nowrap;
+  font-size: 15px;
+  font-weight:400;
+  line-height: 28px;
+  align-items: center;
+}
+
+.side-bar-channel img{
+  height: 20px;
+  text-align: center;
+  
+}

@@ -1,1 +1,0 @@
-json.partial! 'api/cmessage/cmessage' cmessages:@cmessages

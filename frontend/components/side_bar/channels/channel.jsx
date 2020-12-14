@@ -13,8 +13,12 @@ class Channel extends React.Component {
   handleClick(event){
     event.preventDefault();
     
-    this.props.fetchChannelUsers(this.props.id);
+    // this.props.fetchChannelUsers(this.props.id);
+    this.props.updateCurrentChannel(this.props.id);
     this.props.fetchCMessages(this.props.id).then(() => this.props.history.push(`/client/channel/${this.props.id}`));
+
+    // console.log("channeljsx", this.props);
+    // this.props.updateCurrentChannel(this.props.id).then(() => this.props.history.push(`/client/channel/${this.props.id}`));;
   }
   
   render() {
@@ -22,21 +26,21 @@ class Channel extends React.Component {
       let id = this.props.id;
       let res = this.props.channels[id].public;
       if (res === true){
-        return  <img src={window.images.jinghao}width="25 " height="25"></img>
+        return  <img src={window.images.jinghao}></img>
       }else{
-        return <img src={window.images.lock}  width="25 " height="25"></img>
+        return <img src={window.images.lock}  ></img>
       }
     }
    
 
   return (
-    <div>
+    <div className="side-bar-channel">
       
-      {imageDisplay()}
-    <li>
+      
     
-    <button style={{textDecoration:'none', color:'inherit'}} onClick={this.handleClick}>{this.props.name}</button>
-    </li>
+    
+    <button style={{textDecoration:'none', color:'inherit'}}  onClick={this.handleClick}>{imageDisplay()}{this.props.name}</button>
+    
     </div>
     
   )

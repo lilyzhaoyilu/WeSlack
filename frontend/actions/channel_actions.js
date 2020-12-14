@@ -4,8 +4,14 @@ export const RECEIVE_ALL_CHANNELS = 'RECEIVE_ALL_CHANNELS';
 export const RECEIVE_CHANNEL = 'RECEIVE_CHANNEL';
 export const REMOVE_CHANNEL = 'REMOVE_CHANNEL';
 export const RECEIVE_CHANNEL_ERRORS = 'RECEIVE_CHANNEL_ERRORS';
+export const UPDATE_CURRENT_CHANNEL = 'UPDATE_CURRENT_CHANNEL';
 
-
+export const updateCurrentChannel = (currentChannel) => (
+  {
+    type: UPDATE_CURRENT_CHANNEL,
+    currentChannel: currentChannel
+  }
+)
 
 
 const receiveChannelErrors = errors => ({

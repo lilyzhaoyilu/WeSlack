@@ -5,7 +5,8 @@ import {
   Redirect,
   Switch,
   Link,
-  HashRouter
+  HashRouter,
+  withRouter,
 } from 'react-router-dom';
 
 
@@ -28,31 +29,17 @@ class App extends React.Component {
   render() {
     return (
       <div>
-   
-    
-      
-      
       <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <Route exact path="/" component={SplashContainer} />
       <ProtectedRoute path="/client" component={MainBoardContainer}/>
       <Route path="*"><NoMatch /></Route>
-        
-      
-        {/* <ProtectedRoute exact path="/benches/new" component={BenchFormContainer} />
-        <Route path="/benches/:benchId" component={BenchShowContainer} />
-        <Route exact path="/" component={SearchContainer} /> */}
       </Switch>
-  
-      
-    
-  
-    
     </div>
     )
   }
 }
 
 
-export default App;
+export default withRouter(App);

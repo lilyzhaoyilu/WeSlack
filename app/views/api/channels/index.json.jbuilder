@@ -4,5 +4,4 @@
     json.name channel.name
     json.public channel.public
   end 
-
 end 

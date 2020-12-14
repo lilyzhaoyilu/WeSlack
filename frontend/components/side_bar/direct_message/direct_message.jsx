@@ -10,9 +10,9 @@ class DirectMessage extends React.Component {
     
 
   }
-  componentDidMount(){
-    this.props.fetchUsers();
-  }
+  // componentDidMount(){
+  //   this.props.fetchUsers();
+  // }
 
 
   

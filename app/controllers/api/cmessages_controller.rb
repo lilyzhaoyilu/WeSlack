@@ -5,6 +5,7 @@ class Api::CmessagesController < ApplicationController
     # @channel_id = params[:channel_id]
     # debugger
     if @cmessage.save!
+      render :show
     else 
       render json: @cmessage.errors.full_messages 
     end 

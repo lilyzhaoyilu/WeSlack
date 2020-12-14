@@ -10,7 +10,6 @@ class User < ApplicationRecord
   foreign_key: :user_id,
   class_name: :ChannelUser
   
-
   has_many :channels,
   through: :channelusers,
   source: :channel
@@ -19,6 +18,13 @@ class User < ApplicationRecord
   foreign_key: :author_id,
   class_name: :Cmessage
   
+  has_many :received_dmessages, 
+  foreign_key: :receiver_id,
+  class_name: :Dmessage
+
+  has_many :dmessages,
+  foreign_key: :author_id,
+  class_name: :Dmessage
 
   #spire
 

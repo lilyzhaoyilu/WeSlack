@@ -18,22 +18,25 @@ class WorkSpaceHeader extends React.Component {
   }
   
   render() {
-    // const currentChannel = this.props.channels[this.props.currentChannelId]
- 
+    const currentChannel = () => {
+      if(this.props.currentChannel){
+        return (<div>{this.props.channels[this.props.currentChannelId].name}</div>)
+      }else{
+        return (<div></div>)
+      }
+    }
+    
    
   return (
     
     <div className="workspace-header">
-     {/* <div className="channel-header">
-        {this.props.displayname}
-      </div> */}
      
-      {/* {console.log("workspace header", this.props.displayname.name)} */}
-      {/* here are these many people:
-      {this.props.amount} */}
-      {/* {this.props.channels[this.props.currentChannel].name} */}
-      {/* <br></br> */}
-      {/* this is the workspace header */}
+     
+      {console.log("wp header",this.props.currentChannelId)}
+      {/* {console.log("wp header object", this.props.currentChannel.name)} */}
+
+      {currentChannel()}
+      
       
       <div className="workspace-header-left">
         <div className="workspace-header-name">name does not work</div>

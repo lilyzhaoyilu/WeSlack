@@ -47,8 +47,14 @@ class CreateChannel extends React.Component {
 
 // updating state value while inputing
   update(field) {
-    return (e => this.setState({[field]: e.currentTarget.value}))
-  }
+    return ((e) => {
+      if (field === "name"){
+        let temp = e.currentTarget.value;
+        temp = temp.replace(/\s/g ,"-")
+        this.setState({name: temp})}
+      else{
+        this.setState({[field]: e.currentTarget.value})}
+    })}
 
 //handle submit form
   handleSubmit(e){
@@ -71,7 +77,7 @@ class CreateChannel extends React.Component {
   return (
     
   <div className="createchannel">
-    
+    {console.log(this.state)}
     <button className='cchannel-add-channel' onClick={this.handleShow}>add chanel</button>
     
 

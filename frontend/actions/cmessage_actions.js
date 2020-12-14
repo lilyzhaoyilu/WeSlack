@@ -10,20 +10,20 @@ const receiveCMessages = (cmessages) => {
   }
 }
 
-// const receiveCMessage = (cmessage) => {
-//   return {
-//     type: RECEIVE_CMESSAGE,
-//     cmessage
-//   }
-// }
+const receiveCMessage = (cmessage) => {
+  return {
+    type: RECEIVE_CMESSAGE,
+    cmessage
+  }
+}
 
 // const createMessage (cmessage) => {
 //   return
 // }
 
 export const createCMessage = (cmessage) => dispatch => (
-  CMessageUtil.createMessage(cmessage).then(cmessages => (
-    dispatch(receiveCMessages(cmessages)))
+  CMessageUtil.createMessage(cmessage).then(cmessage => (
+    dispatch(receiveCMessage(cmessage)))
   )
 );
 

@@ -13,12 +13,13 @@ class Channel extends React.Component {
   handleClick(event){
     event.preventDefault();
     
-    // this.props.fetchChannelUsers(this.props.id);
+  //   // this.props.fetchChannelUsers(this.props.id);
+  //   // console.log("channeljsx", this.props);
+    // this.props.updateCurrentChannel(this.props.id).then(() => this.props.history.push(`/client/channel/${this.props.id}`));;
+    
     this.props.updateCurrentChannel(this.props.id);
     this.props.fetchCMessages(this.props.id).then(() => this.props.history.push(`/client/channel/${this.props.id}`));
 
-    // console.log("channeljsx", this.props);
-    // this.props.updateCurrentChannel(this.props.id).then(() => this.props.history.push(`/client/channel/${this.props.id}`));;
   }
   
   render() {
@@ -40,6 +41,7 @@ class Channel extends React.Component {
     
     
     <button style={{textDecoration:'none', color:'inherit'}}  onClick={this.handleClick}>{imageDisplay()}{this.props.name}</button>
+    {/* <Link className="side-bar-channel" to={`/client/channel/${this.props.id}`}>{imageDisplay()}{this.props.name}</Link> */}
     
     </div>
     

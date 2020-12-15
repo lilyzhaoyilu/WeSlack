@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import { withRouter } from "react-router";
+import Message from './message';
 
-import {fetchCMessages} from '../../../actions/cmessage_actions';
-
+import {fetchCMessages, receiveCMessage} from '../../../actions/cmessage_actions';
+// import {receiveCMessage} from '../../../actions/cmessage_actions'
 import {createChannelUser,fetchChannelUsers, deleteChannelUser} from '../../../actions/channeluser_actions';
 import {fetchDMessages} from '../../../actions/dmessage_actions'
-import Message from './message';
 
 const mapStateToProps = (state, ownProps) => {
   
@@ -17,18 +17,23 @@ const mapStateToProps = (state, ownProps) => {
   // currentDMId: ownProps.match.params.dmId,
   messages: state.entities.messages,
   // channelusers: state.entities.channelusers
+  currentDM: ownProps.match.params.dmId
     
 }};
 
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = dispatch => {
+///used hahareceiveCMessage for all broadcasting message receiving, considering delete receiveMessage for Dmessage 
+  return {
   createChannelUser: (channelId, userId) => dispatch(createChannelUser(channelId, userId)),
   deleteChannelUser: (channelId, userId) => dispatch(deleteChannelUser(channelId, userId)),
   fetchCMessages: (channelId) => dispatch(fetchCMessages(channelId)),
+  hahareceiveCMessage: (message) => dispatch(receiveCMessage(message)),
   fetchChannelUsers: (channelId) => dispatch(fetchChannelUsers(channelId)),
   fetchDMessages: (currentUserId,otherPersonId) => dispatch(fetchDMessages(currentUserId,otherPersonId)),
   
-});
+  
+}};
 
 export default withRouter(connect(
   mapStateToProps,

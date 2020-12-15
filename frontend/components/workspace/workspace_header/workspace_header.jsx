@@ -22,7 +22,6 @@ class WorkSpaceHeader extends React.Component {
   };
 
   handleLeaveChannel(){
-    console.log("ws header", this.props)
     this.props.deleteChannelUser(this.props.currentChannelId, this.props.currentUser);
   }
   

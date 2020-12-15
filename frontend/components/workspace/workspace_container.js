@@ -21,10 +21,10 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  createChannelUser: (channelId, userId) => dispatch(createChannelUser(channelId, userId)),
-  deleteChannelUser: (channelId, userId) => dispatch(deleteChannelUser(channelId, userId)),
-  fetchCMessages: (channelId) => dispatch(fetchCMessages(channelId)),
-  fetchChannelUsers: (channelId) => dispatch(fetchChannelUsers(channelId)),
+  // createChannelUser: (channelId, userId) => dispatch(createChannelUser(channelId, userId)),
+  // deleteChannelUser: (channelId, userId) => dispatch(deleteChannelUser(channelId, userId)),
+  // fetchCMessages: (channelId) => dispatch(fetchCMessages(channelId)),
+  // fetchChannelUsers: (channelId) => dispatch(fetchChannelUsers(channelId)),
   
 });
 

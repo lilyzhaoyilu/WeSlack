@@ -8,7 +8,7 @@ import DirectMessage from './direct_message';
 const mapStateToProps = (state, ownProps) => {
   
   return {
-    // currentUser: state.session.currentUser,
+    currentUser: state.session.currentUser,
     // users: state.entities.users,
 
   };

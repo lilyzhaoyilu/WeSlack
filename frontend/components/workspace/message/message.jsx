@@ -7,23 +7,118 @@ class Message extends React.Component {
     super(props);
   
   }
+
   componentDidMount(){
-    console.log("messagejsx", this.props)
+  
     if(this.props.match.params.channelId){
-    // this.props.fetchChannelUsers(this.props.match.params.channelId)
-    this.props.fetchCMessages(this.props.match.params.channelId)}
+      this.props.fetchCMessages(this.props.match.params.channelId)
+
+      const that=this;
+      App.cable.subscriptions.create(
+      {channel: 'ChatChannel',
+      channelId: this.props.match.params.channelId,},
+      // dmId: this.props.match.params.dmId},   extra }, above
+      {
+        received: data => {
+          // debugger;
+          that.props.hahareceiveCMessage(data.message);
+        }, 
+        speak: function (data) {
+          return this.perform('speak',data)
+        }
+      }
+      )}
     else if(this.props.match.params.dmId){
       this.props.fetchDMessages(this.props.currentUser, this.props.match.params.dmId)
+      const that=this;
+      App.cable.subscriptions.create(
+      {channel: 'ChatChannel',
+      // channelId: this.props.match.params.channelId,},
+      dmId: this.props.match.params.dmId},
+        //  extra }, above
+      {
+        received: data => {
+          // debugger;
+          that.props.hahareceiveCMessage(data.message);
+        }, 
+        speak: function (data) {
+          return this.perform('speak',data)
+        }
+      }
+      )
     }
+
+
+
+    //listening, the other is broadcasting
+    //set up for action cable
+    ///////
+    // const that=this;
+    // App.cable.subscriptions.create(
+    //   {channel: 'ChatChannel',
+    //   channelId: this.props.match.params.channelId,
+    //   dmId: this.props.match.params.dmId},
+    //   {
+    //     received: data => {
+    //       debugger;
+    //       that.props.hahareceiveCMessage(data.message);
+    //     }, 
+    //     speak: function (data) {
+    //       return this.perform('speak',data)
+    //     }
+    //   }
+    //   )
+      ///////////////
+      
   }
 
   componentDidUpdate(prevProps){
     if (this.props.match.params.channelId){
     if (prevProps.match.params.channelId !== this.props.match.params.channelId){
-      // this.props.fetchChannelUsers(this.props.match.params.channelId)
+      
       this.props.fetchCMessages(this.props.match.params.channelId)
-    }}else if(this.props.match.params.dmId){if (prevProps.match.params.dmId !== this.props.match.params.dmId){
-      this.props.fetchDMessages(this.props.currentUser,this.props.match.params.dmId)}}
+      
+      const that=this;
+      App.cable.subscriptions.create(
+      {channel: 'ChatChannel',
+      channelId: this.props.match.params.channelId,},
+      // dmId: this.props.match.params.dmId},   extra }, above
+      {
+        received: data => {
+          // debugger;
+          that.props.hahareceiveCMessage(data.message);
+        }, 
+        speak: function (data) {
+          return this.perform('speak',data)
+        }
+      }
+      )
+
+
+    }}else if(this.props.match.params.dmId)
+    {
+      if (prevProps.match.params.dmId !== this.props.match.params.dmId)
+      {
+        this.props.fetchDMessages(this.props.currentUser,this.props.match.params.dmId)
+        const that=this;
+        App.cable.subscriptions.create(
+          {channel: 'ChatChannel',
+          // channelId: this.props.match.params.channelId,
+          dmId: this.props.match.params.dmId
+          },
+          {
+            received: data => {
+              // debugger;
+              that.props.hahareceiveCMessage(data.message);
+            }, 
+            speak: function (data) {
+              return this.perform('speak',data)
+            }
+          }
+          )
+      }}
+
+    
   }
   
   render() {
@@ -32,8 +127,11 @@ class Message extends React.Component {
   return (
     
     <div className="message">
-      {messages.map((message=>(<li key={`channel-${this.props.currentChannel}-message-${message.id}`}>{message.body}</li>)))}
-      this is the messages
+       this is the messages
+      {messages.map((message=>(<div className={`message-${message.id}`}>{message.body}</div>)))}
+{/* 
+      {messages.map((message=>(<div key={`channel-${this.props.currentChannel.id}-message-${message.id}`}>{message.body}</div>)))} */}
+     
       
       {/* <MessageFrom /> */}
     </div>

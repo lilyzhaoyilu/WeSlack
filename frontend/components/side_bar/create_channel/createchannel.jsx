@@ -77,7 +77,7 @@ class CreateChannel extends React.Component {
   return (
     
   <div className="createchannel">
-    {console.log(this.state)}
+   
     <button className='cchannel-add-channel' onClick={this.handleShow}>add chanel</button>
     
 

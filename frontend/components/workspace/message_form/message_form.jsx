@@ -11,13 +11,10 @@ class MessageForm extends React.Component {
   }
 
   componentDidUpdate(prevProps){
-    if (prevProps.currentChannel !== this.props.currentChannel){
-      ///TODO: setState doe snt work
-      console.log("compoenent updated!!!");
+    if (prevProps.currentChannel !== this.props.currentChannel){    
       this.setState({
         body: ""
       });
-      console.log("updated state", this.state)
     }
   }
  
@@ -31,14 +28,22 @@ class MessageForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
+
     if (this.props.currentChannel){
     const message = Object.assign({}, this.state, {channel_id: this.props.currentChannel.id, author_id: this.props.currentUser});
-    this.props.createCMessage(message);}
+    // debugger;
+    //actual broadcasting, happens from the backend, triggered here 
+    App.cable.subscriptions.subscriptions[0].speak(message);
+    
+    }
     else if(this.props.currentDM){
       const message = Object.assign({}, this.state, {receiver_id: this.props.currentDM, author_id:this.props.currentUser});
-      console.log("created message", message);
-      this.props.createDMessage(message)
+
+      App.cable.subscriptions.subscriptions[0].speak(message);
+      
     }
+
+
     this.setState({
       body:""
     })
@@ -59,7 +64,7 @@ class MessageForm extends React.Component {
     <form onSubmit={this.handleSubmit} className="messageform-form">
       
       <textarea type="text" placeholder="Send message here"
-        value={this.state.username}
+        value={this.state.body}
         onChange={this.update()}
         className="messageform-input"/>
 

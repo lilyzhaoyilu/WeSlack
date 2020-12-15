@@ -5,7 +5,7 @@ import {createCMessage} from '../../../actions/cmessage_actions';
 import {createDMessage} from '../../../actions/dmessage_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  // console.log("messageform", ownProps)
+
   return {
     currentUser: state.session.currentUser,
     currentChannel: state.entities.channels[ownProps.match.params.channelId],

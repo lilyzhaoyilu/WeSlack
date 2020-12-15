@@ -8,7 +8,7 @@ export const fetchMessages = (currentUserId,otherPersonId) =>{
 }
 
 export const createMessage = (dmessage) =>{
-  console.log(dmessage);
+
   return $.ajax({
     url:`/api/dmessages`,
     method:"POST",
@@ -16,14 +16,3 @@ export const createMessage = (dmessage) =>{
   })
 }
 
-
-// export const createMessage = (currentUserId, otherPersonId, message) =>{
-//   console.log({other_person_id: otherPersonId,current_user_id:currentUserId,
-//     body: message});
-//   return $.ajax({
-//     url:`/api/dmessages`,
-//     method:"POST",
-//     data: {other_person_id: otherPersonId,current_user_id:currentUserId,
-//     body: message}
-//   })
-// }

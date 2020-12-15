@@ -10,7 +10,8 @@ const receiveCMessages = (messages) => {
   }
 }
 
-const receiveCMessage = (message) => {
+export const receiveCMessage = (message) => {
+  
   return {
     type: RECEIVE_CMESSAGE,
     message

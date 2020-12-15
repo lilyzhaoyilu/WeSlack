@@ -22,12 +22,13 @@ class DirectMessage extends React.Component {
     // delete copy[this.props.currentUser];
     // const usersExcludeCurrent = Object.values(copy);
     // const currentUserName = this.props.users[this.props.currentUser].username
+    const actualLink = [this.props.id, this.props.currentUser].sort((a, b) => (a-b)).join('')
   return (
     <div>
       {/* <li  key={`side-dm-user-currentUser`}>{currentUserName}</li>
     {usersExcludeCurrent.map(user => (<li key={`side-dm-user-${user.id}`}>{user.username}</li>))} */}
     
-    <li><Link style={{textDecoration:'none', color:'inherit'}} to={`/client/dm/${this.props.id}`}>{this.props.username}</Link></li>
+    <li><Link style={{textDecoration:'none', color:'inherit'}} to={`/client/dm/${actualLink}`}>{this.props.username}</Link></li>
     </div>
   )
   }

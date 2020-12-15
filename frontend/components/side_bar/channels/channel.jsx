@@ -13,9 +13,7 @@ class Channel extends React.Component {
   handleClick(event){
     event.preventDefault();
     
-  //   // this.props.fetchChannelUsers(this.props.id);
-  //   // console.log("channeljsx", this.props);
-    // this.props.updateCurrentChannel(this.props.id).then(() => this.props.history.push(`/client/channel/${this.props.id}`));;
+
     
     this.props.updateCurrentChannel(this.props.id);
     this.props.fetchCMessages(this.props.id).then(() => this.props.history.push(`/client/channel/${this.props.id}`));

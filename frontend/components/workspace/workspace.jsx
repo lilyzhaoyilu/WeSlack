@@ -29,9 +29,9 @@ class WorkSpace extends React.Component {
     
     <div className="workspace">
     
-      <div className="workspace-header">
+      
       <WorkSpaceHeader />
-      </div>
+      
      
       <div className="workspace-body">
       <div>channel user here </div>

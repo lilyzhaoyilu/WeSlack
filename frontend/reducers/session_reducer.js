@@ -15,7 +15,6 @@ const sessionReducer = (state = _null, action) => {
     case RECEIVE_CURRENT_USER:
       return Object.assign({}, state,{currentUser: action.currentUser.id});
     case UPDATE_CURRENT_CHANNEL:
-      
       return Object.assign({}, state,{currentChannel: action.currentChannel});
     case LOGOUT_CURRENT_USER:
       return _null;

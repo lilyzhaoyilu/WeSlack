@@ -13,18 +13,23 @@ Cmessage.destroy_all
 
 
 generalchannel = Channel.create(name: 'general')
-corgichat = Channel.create(name: 'corgiChat', public: false )
+corgichat = Channel.create(name: 'corgi-chat', public: false )
 workchannel = Channel.create(name: 'work')
 randomchannel = Channel.create(name: 'random')
+cohort = Channel.create(name: '09-20-sf')
 
 
 
 demo = User.create(username: 'DemoUser', password: 'demouser')
 chatbot = User.create(username: 'chatbot', password: 'demouser')
-chaibot = User.create(username: 'chaibot', password: 'chaibothaha')
 leo = User.create(username: 'leothecorgi', password: '666666')
 puff = User.create(username: 'puffthedoge', password: 'puffmombest')
-ellie = User.create(username: 'ellie', password: 'ellieisacorgi')
+kyle =  User.create(username: 'Kyle Francis', password: 'cohorthaha')
+owen = User.create(username: 'Owen Webb', password: 'cohorthaha')
+elizabeth = User.create(username: 'Elizabeth Wright',  password: 'cohorthaha')
+lucy = User.create(username: 'Lucy Wang',  password: 'cohorthaha')
+
+
 
 member1 = ChannelUser.create(channel_id: corgichat.id, user_id: demo.id)
 
@@ -38,7 +43,10 @@ end
 
 message1 = Cmessage.create(body:"Hi WeSlack is pretty cool!", author_id: leo.id, channel_id: generalchannel.id)
 message2 = Cmessage.create(body:"I totally agree! Yay communicating :)", author_id: chatbot.id, channel_id: generalchannel.id)
+message3 = Cmessage.create(body:"I am excited to be here ヾ(◍°∇°◍)ﾉﾞ", author_id: puff.id, channel_id: generalchannel.id)
 
-message3 = Cmessage.create(body:"woof corgis are the best?!?!", author_id: leo.id, channel_id: corgichat.id)
+message4 = Cmessage.create(body:"woof who wants to meet up Friday afternoon?!?!", author_id: leo.id, channel_id: corgichat.id)
 
+message4 = Cmessage.create(body:"happy to be here!", author_id: lucy.id, channel_id: cohort.id)
 
+message5 = Dmessage.create(body:"Hi nice to meet you", author_id: lucy.id, receiver_id: demo.id)

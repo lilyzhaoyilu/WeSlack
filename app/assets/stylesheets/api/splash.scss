@@ -1,21 +1,24 @@
-.splash-header, .splash-content-one{
-  background-color: #f6efe8;
-  padding-left:40px;
-  padding-right: 40px;
-  padding-top: 30px;
-}
+
+
+
 .splash-header{
-  height: 30px;
+  height: 60px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   font-size: 25px;
+  background-color: #f6efe8;
+  padding:20px;
+
+ 
 }
+
+
 
 .splash-header-left{
   display: flex;
   flex-direction: row;
-  padding: 10px 0;
+  
 }
 
 .splash-logo{
@@ -24,12 +27,16 @@
   justify-content: left;
   text-decoration: none;
   color:black;
-  padding-right:5px;
+  padding-top: 10px;
+  padding-right: 0px;
+  padding-bottom: 10px;
+ 
   
 }
 .splash-logo-bro{
   display: flex;
   flex-direction: row;
+  padding: 10px;
 }
 
 .splash-logo-bro h2{
@@ -43,6 +50,7 @@
   height: 40px;
   position: relative;
   bottom:10px;
+  z-index: 5;
   
 }
 
@@ -99,6 +107,12 @@
 
 
 //////////////////////////////// contents
+.splash-content-one{
+  background-color: #f6efe8;
+  padding-left:40px;
+  padding-right: 40px;
+  padding-top: 30px;
+}
 
 .splash-content-one,.splash-content-two,.splash-content-three{
   display: flex;

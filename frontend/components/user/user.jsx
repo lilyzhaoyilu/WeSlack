@@ -22,7 +22,7 @@ class User extends React.Component {
     return (
     <div className="top-user">
      
-    <h2 className="top-user-name">{this.props.users[this.props.currentUser].username}</h2>
+    <div className="top-user-name">{this.props.users[this.props.currentUser].username}</div>
 
     <img className="top-user-pic"  src={ picturePath === 'defaultpicture' ? window.images.dprofile : picturePath} ></img>
     

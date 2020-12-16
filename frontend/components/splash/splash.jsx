@@ -33,11 +33,11 @@ constructor(props){
       <div className="splash-header">
         
         <div className="splash-header-left">
-        <Link to="/" className="splash-logo-container" style={{ textDecoration: 'none' }} color='inherit'>
-          <div className="splash-logo">
+        <Link to="/" className="splash-logo" style={{ textDecoration: 'none' }} color='inherit'>
+       
             <img src={window.images.logo} ></img>
             <h1> WeSlack</h1>
-          </div>
+          
         </Link>
 
         <div className="splash-logo-bro">

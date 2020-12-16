@@ -5,11 +5,11 @@ import MessageFrom from '../message_form/message_form_container'
 class Message extends React.Component {
   constructor(props){
     super(props);
+    this.bottom = React.createRef();
   
   }
 
   componentDidMount(){
-  
     if(this.props.match.params.channelId){
       this.props.fetchCMessages(this.props.match.params.channelId)
 
@@ -47,29 +47,6 @@ class Message extends React.Component {
       }
       )
     }
-
-
-
-    //listening, the other is broadcasting
-    //set up for action cable
-    ///////
-    // const that=this;
-    // App.cable.subscriptions.create(
-    //   {channel: 'ChatChannel',
-    //   channelId: this.props.match.params.channelId,
-    //   dmId: this.props.match.params.dmId},
-    //   {
-    //     received: data => {
-    //       debugger;
-    //       that.props.hahareceiveCMessage(data.message);
-    //     }, 
-    //     speak: function (data) {
-    //       return this.perform('speak',data)
-    //     }
-    //   }
-    //   )
-      ///////////////
-      
   }
 
   componentDidUpdate(prevProps){
@@ -91,11 +68,10 @@ class Message extends React.Component {
         speak: function (data) {
           return this.perform('speak',data)
         }
+        }
+        )
       }
-      )
-
-
-    }}else if(this.props.match.params.dmId)
+    }else if(this.props.match.params.dmId)
     {
       if (prevProps.match.params.dmId !== this.props.match.params.dmId)
       {
@@ -104,8 +80,7 @@ class Message extends React.Component {
         App.cable.subscriptions.create(
           {channel: 'ChatChannel',
           // channelId: this.props.match.params.channelId,
-          dmId: this.props.match.params.dmId
-          },
+          dmId: this.props.match.params.dmId},
           {
             received: data => {
               // debugger;
@@ -118,6 +93,11 @@ class Message extends React.Component {
           )
       }}
 
+
+    if(this.bottom.current != null){
+      document.getElementById('message-bottom').scrollIntoView()
+    }
+
     
   }
   
@@ -129,6 +109,7 @@ class Message extends React.Component {
     <div className="message">
        this is the messages
       {messages.map((message=>(<div className={`message-${message.id}`}>{message.body}</div>)))}
+      <div id="message-bottom" ref={this.bottom}></div>
 {/* 
       {messages.map((message=>(<div key={`channel-${this.props.currentChannel.id}-message-${message.id}`}>{message.body}</div>)))} */}
      

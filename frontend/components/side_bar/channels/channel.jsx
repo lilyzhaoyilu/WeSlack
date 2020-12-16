@@ -33,15 +33,14 @@ class Channel extends React.Component {
    
 
   return (
-    <div className="side-bar-channel">
+    
       
       
     
     
     <button style={{textDecoration:'none', color:'inherit'}}  onClick={this.handleClick}>{imageDisplay()}{this.props.name}</button>
-    {/* <Link className="side-bar-channel" to={`/client/channel/${this.props.id}`}>{imageDisplay()}{this.props.name}</Link> */}
     
-    </div>
+  
     
   )
   }

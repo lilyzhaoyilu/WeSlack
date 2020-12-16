@@ -3,6 +3,61 @@
   flex-direction:column;
   list-style:none;
   height:100%;
+}
+
+.side-bar-channels{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+}
+
+.side-bar-user{
+  padding: 50px 0 50px;
+  font-size:17px;
+  font-weight:900;
+  color: white;
+  border-color: rgb(82, 38, 83);
+}
+
+
+
+
+.side-bar-channel-control img, .side-bar-message-control img{
+  height: 1.25em;
+  padding: 0 10px 0;
+  margin: -5px -5px 0 -12px;
+}
+
+.side-bar-channel-control button,.side-bar-message-control button{
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: rgb(188, 171, 188);
   
 }
 
+
+
+
+.side-bar-message-control, .side-bar-channel-control{
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+
+  height: 28px;
+  font-weight:400;
+  font-size: 17px;
+
+  white-space: nowrap;
+  padding: 30px 0 17px;
+  color: rgb(188, 171, 188);
+
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:flex-start;
+  line-height:36px;
+}

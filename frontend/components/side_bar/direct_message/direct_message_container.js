@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
   
   return {
     currentUser: state.session.currentUser,
-    // users: state.entities.users,
+    users: state.entities.users,
 
   };
 };

@@ -9,13 +9,33 @@ import DirectMessage from './direct_message/direct_message_container'
 class SideBar extends React.Component {
   constructor(props){
     super(props);
+    this.state={
+      channels: "side-bar-channels",
+      dms: "side-bar-direct-messages",
+      channelRotate: "",
+      messageRotate: '',
+    }
+    this.handleToggleChannel = this.handleToggleChannel.bind(this);
+    this.handleToggleMessage = this.handleToggleMessage.bind(this);
     
    
   }
 
-  // componentDidMount(){
-  //   this.props.fetchChannels(this.props.currentUser);
-  // }
+  handleToggleChannel() {
+    if (this.state.channels === "side-bar-channels"){
+      this.setState({channels: "side-bar-channels-noshow",channelRotate: "rotate" })
+    }else{
+      this.setState({channels: "side-bar-channels", channelRotate: ""})
+    }
+  }
+
+  handleToggleMessage() {
+    if (this.state.dms === "side-bar-direct-messages"){
+      this.setState({dms: "side-bar-direct-messages-noshow", messageRotate:"rotate"})
+    }else{
+      this.setState({dms: "side-bar-direct-messages", messageRotate:""})
+    }
+  }
 
  
   
@@ -31,33 +51,28 @@ class SideBar extends React.Component {
     
   return (
  
-    <div className="side-bar">
+  <div className="side-bar">
       
-      <span className="side-bar-dropdown">{this.props.users[currentId].username}</span>
-      
-      <span className="side-bar-top">
-        <ul className="side-bar-top-ul">
-        <li>threds</li>
-        <li>metions</li>
-        <li>reacts</li>
-        </ul>
-      </span>
-   
+    <div className="side-bar-user">{this.props.users[currentId].username}</div>
 
-  <span className="side-bar-channels">
-    Channels</span>
+    {/* <div className="side-bar-channel-control"> */}
+      <button  className="side-bar-channel-control" onClick={this.handleToggleChannel}><img className={this.state.channelRotate} src={window.images.triangle3}></img>
+      Channels</button>
+    {/* </div> */}
 
+    <div className={this.state.channels}>
     {channels.map(c => (<Channel key={`side-bar-${c.id}`} id={c.id} name={c.name}></Channel>))}
-
-    <div
-    className="side-bar-channels-create"><CreateChannel />
     </div>
 
-    <span className="side-bar-direct-messages">
-        Direct messages
+    <CreateChannel />
+    
+    <button className="side-bar-message-control" onClick={this.handleToggleMessage}><img className={this.state.messageRotate} src={window.images.triangle3}></img>Direct messages</button>
+    
+    <div className={this.state.dms}>
         <DirectMessage id={this.props.currentUser} username={currentUserName}></DirectMessage>
         {users.map(u => (<DirectMessage key={`side-bar-${u.id}`} id={u.id} username={u.username}></DirectMessage>))}
-    </span>
+    </div>
+    
     </div>
     )
     

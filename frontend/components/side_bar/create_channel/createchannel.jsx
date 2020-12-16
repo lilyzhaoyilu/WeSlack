@@ -76,9 +76,10 @@ class CreateChannel extends React.Component {
   
   return (
     
-  <div className="createchannel">
+  // <div className="createchannel">
+  <div className="side-bar-channels-create">
    
-    <button className='cchannel-add-channel' onClick={this.handleShow}>add chanel</button>
+    <button className='cchannel-add-channel' onClick={this.handleShow}>    <img src={window.images.plus} ></img>Add channels</button>
     
 
 

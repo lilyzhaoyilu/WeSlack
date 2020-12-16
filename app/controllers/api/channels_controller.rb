@@ -19,14 +19,14 @@ class Api::ChannelsController < ApplicationController
     # debugger
     # @channel.public = @channel.public == true ? true : false
     if @channel.save
-      if @channel.public == true
-        @users = User.all
-        @users.each do |user|
-          ChannelUser.create(channel_id: @channel.id, user_id: user.id)
-        end 
-      else 
-        ChannelUser.create(channel_id: @channel.id, user_id: current_user.id)
-      end 
+      # if @channel.public == true
+      #   @users = User.all
+      #   @users.each do |user|
+      #     ChannelUser.create(channel_id: @channel.id, user_id: user.id)
+      #   end 
+      # else 
+      ChannelUser.create(channel_id: @channel.id, user_id: current_user.id)
+      
       render :show
     else
       render json: ["invalid creation"], status: 422

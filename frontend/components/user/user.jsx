@@ -1,39 +1,37 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 
 
 class User extends React.Component {
   constructor(props){
     super(props);
-    
+    this.handleLogOut = this.handleLogOut.bind(this);
+  }
 
+  handleLogOut(event){
+  event.preventDefault();
+  this.props.logout().then(() => this.props.history.push(`/`));
   }
   
-  render() {
-    let currentId = this.props.currentUser
-    let picturePath = this.props.users[currentId].image_url
 
+  render() {
+    
+    const picturePath = this.props.users[this.props.currentUser].image_url
 
 
     return (
-    <hgroup className="top-user">
+    <div className="top-user">
      
-    <h2 className="top-user-name">{this.props.users[currentId].username}</h2>
+    <div className="top-user-name">{this.props.users[this.props.currentUser].username}</div>
 
     <img className="top-user-pic"  src={ picturePath === 'defaultpicture' ? window.images.dprofile : picturePath} ></img>
     
 
-    <button className="top-user-logout" onClick={this.props.logout}>Log Out</button>
+    <button className="top-user-logout" onClick={this.handleLogOut}>Log Out</button>
 
-    </hgroup>
-  )
-     
-        
-      
+    </div>
+  ) 
   }
-    
-    
 };
 
 

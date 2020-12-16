@@ -1,0 +1,1 @@
+json.extract! cmessage, :body, :author_id, :created_at

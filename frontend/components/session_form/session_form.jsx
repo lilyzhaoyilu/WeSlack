@@ -10,7 +10,7 @@ export default class SessionForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
-    // this.handleKeypress = this.handleKeypress.bind(this);
+  
   }
 
   update(field) {
@@ -22,22 +22,14 @@ export default class SessionForm extends React.Component {
   handleSubmit(e){
   e.preventDefault();
   const user = Object.assign({}, this.state);
-  this.props.processForm(user); //TODO:?
+  this.props.processForm(user); 
   }
 
   handleDemo(e){
     e.preventDefault();
-    
     this.props.processDemo(); 
   }
   
-  // handleKeypress(e){
-  //     //it triggers by pressing the enter key
-  //     e.preventDefault();
-  //   if (e.keyCode === 13) {
-  //     handleSubmit(e);
-  //   }
-  // };
 
   renderErrors() {
     return(
@@ -57,55 +49,51 @@ export default class SessionForm extends React.Component {
 
     const buttonValue = this.props.formType === 'signup' ? 'Sign Up' : 'Log In'
 
-    // const errorMessages = this.renderErrors() ? " " : this.renderErrors()
+    
     return (
 
       
-      <div className="session-form-container">
+    <div className="session-form-container">
           
-          
-        <Link to="/" className="session-logo" style={{ textDecoration: 'none' }}>
-
-          <div className="session-logo-image">
-            <img src={window.images.logo} width="50 " height="50"></img>
-            <h1> WeSlack</h1>
-          </div>
-        </Link>
 
 
+      <Link to="/" style={{ textDecoration: 'none' }} color='inherit'>
+      <div className="session-logo">
+        <img src={window.images.logo} width="50 " height="50"></img>
+        <h1> WeSlack</h1>
+      </div>
+      </Link>
 
-        
-        <div className="session-please">Please {this.props.formType} or {this.props.navLink}
-        
 
-        <div className="session-error" color='red'>{this.renderErrors()}</div></div>
-        
-        <div className="session-below-error">
-        
+
+      <div className="session-words">
+        <h2>Let's get started</h2>
+        <br/>
+        <h3>Please {this.props.formType} or {this.props.navLink}</h3>
+      </div>
+
+
+      <div className="session-below-words">
         <form onSubmit={this.handleSubmit} className="session-form">
-          
           <input type="text" placeholder="Username"
-          value={this.state.username}
-          onChange={this.update('username')}
-          className="session-input"/>
-          
-          <br/>
-          
+            value={this.state.username}
+            onChange={this.update('username')}
+            className="session-input"/>
+
           <input type="password" placeholder="Password"
           value={this.state.password}
           onChange={this.update('password')}
           className="session-input"/>
-         
-
-          <br/>
-
-          <input className="session-submit" type="submit" value={buttonValue}   />
-    
+          
+          <input className="session-submit" type="submit" value={buttonValue}/>
         </form>
-        <br></br>
-        <button className="session-try-demo"   onClick={this.handleDemo}>Demo User</button>
-        </div>
+
+          <button className="session-try-demo" onClick={this.handleDemo}>Demo User</button>
+
+          <div className="session-error" color='red'>{this.renderErrors()}</div>
       </div>
+        
+    </div>
     );
   }
 

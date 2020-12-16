@@ -9,6 +9,8 @@
 User.destroy_all
 Channel.destroy_all
 ChannelUser.destroy_all
+Cmessage.destroy_all
+
 
 generalchannel = Channel.create(name: 'general')
 corgichat = Channel.create(name: 'corgiChat', public: false )
@@ -34,5 +36,9 @@ User.all.each do |user|
   end 
 end 
 
+message1 = Cmessage.create(body:"Hi WeSlack is pretty cool!", author_id: leo.id, channel_id: generalchannel.id)
+message2 = Cmessage.create(body:"I totally agree! Yay communicating :)", author_id: chatbot.id, channel_id: generalchannel.id)
+
+message3 = Cmessage.create(body:"woof corgis are the best?!?!", author_id: leo.id, channel_id: corgichat.id)
 
 

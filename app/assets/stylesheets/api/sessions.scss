@@ -10,59 +10,41 @@
   align-items: center;
 }
 
-.session-please, .session-error{
-  margin: 5px;
-
+.session-logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  font-size: 34px;
+  padding: 48px;
+  text-align: center;
 }
 
-// .session-error{
-//   display: absolute;
-//   left:200px;
-//   color:red;
-// }
 
 
+
+//words on buttons
+
+.session-submit:hover, .session-try-demo:hover {
+  cursor: pointer;
+}
 
 .session-submit,.session-try-demo {
-  background-color: #4a1548;
-  color: #ffffff;
-  padding: 0 16px 3px;
+  background-color:  #611f69;
+  color: white;
   font-size: 18px;
-  font-weight: 900;
+  font-weight: 700;
   height: 44px;
   min-width: 96px;
   width: 400px;
   border-radius: 4px;
+  border: none;
+  letter-spacing: -0.5px;
+  display: inline-block;
+  margin-bottom: 15px;
+  outline:none;
 }
 
-.session-submit:hover {
-  cursor: pointer;
-}
-.session-try-demo:hover {
-  cursor: pointer;
-}
-.session-please{
-  position: relative;
-  top:230px;
-  // bottom:20px;
-}
-.session-please li{
-  color:red;
-}
-
-.session-below-error{
-  position: absolute;
-  top: 380px;
-  right: 0;
-  left: 0px;
-  width: 100%;
-  // margin-top: 400px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
 
 .session-input{
@@ -71,7 +53,6 @@
   transition: border 80ms;
   margin: 0 0 20px;
   box-sizing: border-box;
-  // width: 20%;
   min-width: 400px;
   border-color: rgb(134, 134, 134);
   border-bottom-style: solid;
@@ -84,4 +65,41 @@
 .session-input:focus {
   box-shadow: 0px 0px 5px rgb(18, 100, 163);
   outline-width: 0;
+}
+
+
+///words
+.session-words h2{
+  font-weight: 700;
+  font-size:48px;
+  line-height: 46px;
+  max-width: 700px;
+  text-align: center;
+  letter-spacing: -.75px;
+  margin-bottom: 10px;
+}
+
+.session-words h3{
+  font-size: 18px;
+  line-height: 27px;
+  margin-bottom: 32px;
+  color: #454245;
+  max-width: 700px;
+  text-align: center;
+  font-weight: normal;
+  padding-bottom:40px;
+}
+
+
+.session-below-words form{
+  display: flex;
+  flex-direction: column;
+}
+
+.session-error{
+  color:red;
+  font-weight:400;
+  font-size: 13px;
+  line-height:18px;
+  box-sizing: border-box;
 }

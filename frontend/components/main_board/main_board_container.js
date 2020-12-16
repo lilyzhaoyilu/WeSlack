@@ -1,17 +1,18 @@
 import { connect } from 'react-redux';
-
-import { logout } from '../../actions/session_actions';
 import MainBoard from './main_board';
-
+import {fetchUsers} from '../../actions/user_actions';
+import {fetchChannels} from '../../actions/channel_actions';
 const mapStateToProps = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
-    users: state.entities.users
+    // users: state.entities.users
   };
 };
 
 const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout())
+  fetchUsers: () => dispatch(fetchUsers()),
+  fetchChannels: (userId) => dispatch(fetchChannels(userId)),
+  
 });
 
 export default connect(

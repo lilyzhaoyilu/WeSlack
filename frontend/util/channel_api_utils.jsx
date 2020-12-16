@@ -39,3 +39,10 @@ export const deleteChannel = (channelId) =>{
     
   })
 }
+
+export const fetchChannelUsers = (channelId) =>{
+  return $.ajax({
+    url:`/api/channels/${channelId}/users`,
+    method:"GET",
+  })
+}

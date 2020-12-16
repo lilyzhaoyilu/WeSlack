@@ -1,3 +1,70 @@
 // Place all the styles related to the api/channels controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+
+///channels and direct messages
+.side-bar-channels button, .cchannel-add-channel button, .side-bar-direct-messages button{
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  height: 28px;
+  padding-left:0px;
+  font-weight:400;
+  font-size: 15px;
+  white-space: nowrap;
+  padding: 5px 0 5px;
+  color: rgb(188, 171, 188);
+}
+
+
+///trianlges
+.cchannel-add-channel img, .side-bar-direct-messages img{
+  height: 1em;
+  padding: 0 5px 0 10px;
+  margin: -5px 0px 0 -5px;
+}
+
+
+//// pond and lock
+.side-bar-channels img{
+  height: 1em;
+  padding: 0 10px 0;
+  margin: -5px -5px 0 0px;
+}
+.side-bar-direct-messages li a{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:flex-start;
+  padding-top: 3px;
+}
+.side-bar-direct-messages li a img{
+  height: 1.55em;
+  padding: 0 10px 0;
+  margin: -5px -1px 0 0px;
+  border-radius:20px;
+}
+
+.side-bar-direct-messages li{
+  padding: 5px 0 5px;
+}
+.side-bar-direct-message-you{
+  size: 10px;
+  font-weight: 300px;
+  padding-left: 5px;
+  opacity: 0.7;
+}
+
+////noshow
+.side-bar-direct-messages-noshow, .side-bar-channels-noshow{
+  display: none;
+}
+.rotate{
+  transform: rotate(-0.25turn);
+}

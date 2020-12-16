@@ -28,13 +28,9 @@ class WorkSpace extends React.Component {
   return (
     
     <div className="workspace">
-    
-      
       <WorkSpaceHeader />
-      
-     
+
       <div className="workspace-body">
-      <div>channel user here </div>
       <Message />
       <MessageForm />
       </div>

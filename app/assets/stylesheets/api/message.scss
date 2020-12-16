@@ -1,6 +1,8 @@
 .message{
   overflow-y: scroll;
-  height: 60vw;
+  height: 54vw;
+  overflow-x: hidden;
+  height: calc(96vh - 202px);
 }
 //////scroll but does not show the bar
 .message::-webkit-scrollbar {

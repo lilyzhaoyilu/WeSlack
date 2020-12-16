@@ -14,7 +14,7 @@ class TopBar extends React.Component {
     
      
   return (
-    <div className="top-navbar">
+    <div className="main-top-nav">
 
       <div className="top-navbar-left">
         <Link to="/">

@@ -22,7 +22,8 @@ class WorkSpaceHeader extends React.Component {
   };
 
   handleLeaveChannel(){
-    this.props.deleteChannelUser(this.props.currentChannelId, this.props.currentUser);
+    
+    this.props.deleteChannelUser(this.props.match.params.channelId, this.props.currentUser);
   }
   
   render() {
@@ -33,15 +34,24 @@ class WorkSpaceHeader extends React.Component {
     else{
       return (<div></div>)
     }}
+
     const currentMemberAmount =  Object.values(this.props.channelusers).length
 
     const currentChannel = () => {
       if(this.props.currentChannel){
-        return (<div>{this.props.channels[this.props.currentChannel.id].name}</div>)
-      }else{
-        return (<div></div>)
+        return (this.props.channels[this.props.currentChannel.id].name)
       }
     }
+
+    const currentChannelDescription = () => {
+      if(this.props.currentChannel && this.props.channels[this.props.currentChannel.id].description){
+        return (this.props.channels[this.props.currentChannel.id].description)
+      }else if(this.props.currentChannel){
+        return("Add a topic")
+      }
+    }
+
+   
     
    
   return (
@@ -51,15 +61,17 @@ class WorkSpaceHeader extends React.Component {
       
       
       <div className="workspace-header-left">
-        <div className="workspace-header-name">{currentChannel()}</div>
-        <div className="workspace-header-description">{channelusers()}</div>
+        <div className="workspace-header-name">#{currentChannel()}</div>
+        <div className="workspace-header-description">{currentChannelDescription()}</div>
       </div>
-      
+      {/* {channelusers()} */}
       
       <div className="workspace-header-right">
         <div className="workspace-header-profiles"></div>
-        <div className="workspace-header-number"># of people in channel{this.props.amount}</div>
-        <div><button onClick={this.handleLeaveChannel}>leave channel</button></div>
+        <div className="workspace-header-number">{currentMemberAmount} in channel</div>
+        <button className="workspace-header-memberinfo"><img src={window.images.info}></img></button>
+        <button className="workspace-header-leave" onClick={this.handleLeaveChannel}><img src={window.images.leave}></img></button>
+        
       </div>
     </div>
     )

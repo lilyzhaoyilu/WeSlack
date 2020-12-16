@@ -9,16 +9,17 @@
 }
 
 .messageform-form textarea{
-  position: absolute;
+ 
   width: 100%;
   overflow: auto;
   box-sizing: border-box;
   outline: none;
   resize: none;
-  height:100px;
-  bottom: 0;
-  
+  height:110px;
+  top: 5px;
 }
+
+
 .messageform-form img{
   position: absolute;
   bottom: 0;

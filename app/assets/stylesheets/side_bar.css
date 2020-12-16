@@ -1,4 +1,5 @@
 .side-bar{
+  
   display:flex;
   flex-direction:column;
   list-style:none;
@@ -12,7 +13,7 @@
 }
 
 .side-bar-user{
-  padding: 50px 0 50px;
+  padding: 40px 0 40px;
   font-size:17px;
   font-weight:900;
   color: white;

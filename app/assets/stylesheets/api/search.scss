@@ -1,0 +1,36 @@
+.search{
+  position: relative;
+  
+}
+
+.search-li{
+  // display: none;
+  position: absolute;
+  top: 30px;
+  border: 1px solid;
+  background-color: white;
+  width: 27vw;
+  height: 30vh;
+  overflow: auto;
+  border-radius: 14px;
+}
+
+.search-li-noshow{
+  display:none;
+}
+
+.search-li button{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin: 20px 20px 20px;
+  font-size: 17px;
+  font-weight: 600;
+
+}
+
+.search input{
+  width: 25vw;
+  outline: none;
+}

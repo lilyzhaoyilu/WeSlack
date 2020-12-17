@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import User from '../user/user_container'
-
+import Search from './search/search_container'
 
 class TopBar extends React.Component {
   constructor(props){
@@ -23,7 +23,7 @@ class TopBar extends React.Component {
         </Link>
       </div>
 
-      <div className="top-navbar-mid">search bar
+      <div className="top-navbar-mid"><Search />
       </div>
 
       <div className="top-navbar-right">

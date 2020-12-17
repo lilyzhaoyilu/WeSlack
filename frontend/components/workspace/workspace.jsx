@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import WorkSpaceHeader from './workspace_header/workspace_header_container'
 import MessageForm from './message_form/message_form_container'
 import Message from './message/message_container'
-
+import Search from '../top_bar/search/search_container'
 
 class WorkSpace extends React.Component {
   constructor(props){
@@ -28,8 +28,8 @@ class WorkSpace extends React.Component {
   return (
     
     <div className="workspace">
+      <div className="workspace-search"></div>
       <WorkSpaceHeader />
-
       <div className="workspace-body">
       <Message />
       <MessageForm />

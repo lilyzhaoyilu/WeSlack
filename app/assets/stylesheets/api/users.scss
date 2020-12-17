@@ -12,12 +12,88 @@
 }
 
 .top-user{
-  display: flex;
-  flex-direction: row;
+  position: relative;
+  padding-right: 5px;
+}
+
+.top-user button{
+  border: none;
+  outline: none;
+  background-color:transparent;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.top-user-pic{
+  background-color: rgba(29, 28, 29, 0.13);
+  background-size: 100%;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  box-sizing: border-box;
+  color: rgb(29, 28, 29);
+  display: inline-block;
+  line-height: 22.0002px;
+  position: relative;
+  height: 36px;
+  width: 36px;
+}
+
+
+
+
+.top-user-dropdown-noshow{
+  display:none;
+}
+
+.top-user-dropdown{
+  background-color:#f8f8f8;
+  position: absolute;
+  right:5px;
+  padding:5px;
+  border-radius: 4px;
+  z-index: 5;
+  width:300px;
+
+}
+
+.top-user-dropdown > li{
+  list-style: none;
+  font-size: 15px;
+  height: 28px;
+  padding-bottom: 12px;
+  padding-left: 24px;
+  padding-right: 20px;
+  padding-top: 8px;
   
 }
 
 .top-user-logout{
-  display: absolute;
+  border: none;
+  outline: none;
+  background-color:transparent;
+  cursor: pointer;
+  font-size: 15px;
+}
+.top-user-dot{
+  height: 0.7em;
+  padding-top:1px;
 }
 
+.top-user-name{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.top-user-pic-flex-name, .top-user-pic-flex-status{
+  padding: 2px;
+  color: black
+}
+.top-user-pic-flex-status{
+  opacity: 0.7;
+}
+.top-user-pic-flex-name{
+  font-weight: 700;
+}

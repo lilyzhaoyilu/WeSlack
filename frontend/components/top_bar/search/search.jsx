@@ -115,7 +115,7 @@ componentDidUpdate(prevProps){
   return (
     
     <div className='search' ref={this.container} onFocus={this.handleFocuse} onBlur={this.handleClose}>
-      {console.log(this.state)}
+     
           <input
           className='search-input'
           onChange={this.handleInput}

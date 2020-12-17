@@ -2,17 +2,17 @@
 
 .main-top-nav{
   background-color: #350d36;
-  
   display: flex;
-  flex-direction: row;
+  flex-direction: row; 
   justify-content: space-between;
   align-items: center;
   color: rgb(188, 171, 188);
   padding: 15px 5px 15px;
   box-sizing:border-box;
   height: 38px;
-
 }
+
+
 /* 
 .top-navbar span{
   display: inline-block;
@@ -20,7 +20,7 @@
   align-items: baseline;
 } */
 
-.top-navbar-left img, .top-user-pic{
+.top-navbar-left img{
   background-color: rgba(29, 28, 29, 0.13);
   background-size: 100%;
   height: 28px;
@@ -41,10 +41,4 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  
-}
-
-.top-navbar-left img{
-  display:absolute;
-  
 }

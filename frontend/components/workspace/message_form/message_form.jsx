@@ -8,6 +8,8 @@ class MessageForm extends React.Component {
       body: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleKeypress = this.handleKeypress.bind(this);
+    this.handleNewLine = this.handleNewLine.bind(this);
   }
 
   componentDidUpdate(prevProps){
@@ -25,6 +27,7 @@ class MessageForm extends React.Component {
       body: e.currentTarget.value
     })};
   }
+
 
   handleSubmit(e){
     e.preventDefault();
@@ -50,10 +53,23 @@ class MessageForm extends React.Component {
       
   }
 
- 
+  handleNewLine(e){
+    e.preventDefault();
+    this.setState({body: this.state.body + '\r\n'})
+  }
+
+  handleKeypress(e){
+    //it triggers by pressing the enter key
+    // e.preventDefault();
+  if (e.key === 'Enter' && e.ctrlKey) {
+    this.handleNewLine(e);
+  }else if (e.key === 'Enter' ){
+    console.log("Enter and shift key pressed haha")
+    this.handleSubmit(e);
+  }
+};
 
 
-  
   render() {
     const sendButtonStatus = this.state.body === ""? true: false;
 //   
@@ -61,14 +77,17 @@ class MessageForm extends React.Component {
     
    
 
-    <form onSubmit={this.handleSubmit} className="messageform-form">
+    <form onSubmit={this.handleSubmit} className="messageform-form" onKeyPress={this.handleKey}>
       
       <textarea type="text" placeholder="Send message here"
         value={this.state.body}
         onChange={this.update()}
-        className="messageform-input"/>
+        className="messageform-input"
+        onKeyDown={this.handleKeypress}/>
 
       <button className="messageform-submit" disabled={sendButtonStatus}><i className="far fa-paper-plane"></i></button>
+      <div><strong>Return</strong> to send      <strong>Shift + Return</strong> to add a new line</div>
+     
     </form>
 
   

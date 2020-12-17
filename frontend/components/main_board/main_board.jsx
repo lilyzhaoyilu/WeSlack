@@ -43,6 +43,7 @@ class MainBoard extends React.Component {
 
       {/* <div className="main-top-nav"><TopBar /></div> */}
       <TopBar />
+      
 
       <div className="main-not-top-nav">
         

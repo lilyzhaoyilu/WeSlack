@@ -15,10 +15,11 @@ class ChatChannel < ApplicationCable::Channel
     message = Cmessage.new(body: data['body'],author_id: data['author_id'], channel_id: data['channel_id'])
     if message.save
       socket = {message: message}
-      ChatChannel.broadcast_to(@channel,socket)
+      ChatChannel.broadcast_to(data['channel_id'],socket)
     end
   elsif data['receiver_id']
-    actual_receiver = data['receiver_id']
+    
+    actual_receiver = data['receiver_id'].clone
     author_id = data['author_id']
     actual_receiver.slice!(author_id.to_s)
     # debugger
@@ -26,7 +27,7 @@ class ChatChannel < ApplicationCable::Channel
     # debugger
     if message.save
       socket = {message: message}
-      ChatChannel.broadcast_to(@dmchannel,socket)
+      ChatChannel.broadcast_to(data['receiver_id'],socket)
     end
   end  
   end 

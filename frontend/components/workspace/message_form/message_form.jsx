@@ -68,7 +68,7 @@ class MessageForm extends React.Component {
         onChange={this.update()}
         className="messageform-input"/>
 
-      <button className="messageform-submit" disabled={sendButtonStatus}><img src={window.images.send}></img></button>
+      <button className="messageform-submit" disabled={sendButtonStatus}><i className="far fa-paper-plane"></i></button>
     </form>
 
   

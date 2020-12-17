@@ -1,8 +1,7 @@
 .main-board{
-  display: flex;
-  flex-direction: column;
+  display: grid;
   height: 100vh;
-  overflow: scroll;
+  grid-template-rows: auto 1fr;
 }
 
 
@@ -14,7 +13,7 @@
   display: flex;
   /* overflow: hidden; */
   flex-direction: row;
-  height: calc(97vh - 38px);
+  height: 100%;
   position: relative;
 }
 

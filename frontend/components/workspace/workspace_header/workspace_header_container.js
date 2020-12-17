@@ -9,7 +9,9 @@ import {createChannelUser,fetchChannelUsers, deleteChannelUser} from '../../../a
 const mapStateToProps = (state, ownProps) => {
   return {
   channels: state.entities.channels,
+  users: state.entities.users,
   currentChannel: state.entities.channels[ownProps.match.params.channelId],
+  currentDM: ownProps.match.params.dmId,
   currentUser: state.session.currentUser,
   channelusers: state.entities.channelusers
   // currentChannelId: ownProps.match.params.channelId,

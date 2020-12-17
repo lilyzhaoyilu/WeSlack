@@ -36,6 +36,7 @@ constructor(props){
         <Link to="/" className="splash-logo" style={{ textDecoration: 'none' }} color='inherit'>
        
             <img src={window.images.logo} ></img>
+            
             <h1> WeSlack</h1>
           
         </Link>

@@ -3,13 +3,42 @@
   height: 54vw;
   overflow-x: hidden;
   height: calc(96vh - 202px);
+  font-size:15px;
+  line-height:22px;
+  text-align:left;
 }
 //////scroll but does not show the bar
 .message::-webkit-scrollbar {
   display: none;
 }
 
-.message div{
-  margin: 20px;
+
+
+.message > div{
+  display: flex;
+  flex-direction: row;
+  margin: 10px 15px 10px;
 }
 
+.message img{
+  width:36px;
+}
+.message-time{
+  opacity: 0.7;
+  font-size: 15px;
+  margin-left: 5px;
+}
+.message-name{
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 100%;
+}
+.message-name div{
+  font-weight: 900;
+}
+
+.message-name-container{
+  width: 100%;
+}

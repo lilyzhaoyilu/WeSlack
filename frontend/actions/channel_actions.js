@@ -5,6 +5,19 @@ export const RECEIVE_CHANNEL = 'RECEIVE_CHANNEL';
 export const REMOVE_CHANNEL = 'REMOVE_CHANNEL';
 export const RECEIVE_CHANNEL_ERRORS = 'RECEIVE_CHANNEL_ERRORS';
 export const UPDATE_CURRENT_CHANNEL = 'UPDATE_CURRENT_CHANNEL';
+export const RECEIVE_CHANNELS = 'RECEIVE_CHANNELS'
+
+
+const receiveAllChannels = (allchannels) => {
+  return {
+    type: RECEIVE_ALL_CHANNELS,
+    allchannels
+  }
+}
+
+
+
+
 
 export const updateCurrentChannel = (currentChannel) => (
   {
@@ -21,7 +34,7 @@ const receiveChannelErrors = errors => ({
 
 const receiveChannels = (channels) => {
   return {
-    type: RECEIVE_ALL_CHANNELS,
+    type: RECEIVE_CHANNELS,
     channels
   }
 }
@@ -49,6 +62,13 @@ export const fetchChannels = (userId) => dispatch => (
     dispatch(receiveChannelErrors(err.responseJSON))
     )
 );
+
+
+export const fetchAllChannels = () => dispatch => (
+  ChannelApiUtil.fetchAllChannels()
+  .then(cs =>dispatch(receiveAllChannels(cs)))
+);
+
 
 
 

@@ -5,7 +5,8 @@ class Api::ChannelsController < ApplicationController
       @channels = current_user.channels 
       render :index 
     else 
-      render json:["error"], status: 401
+      @channels = Channel.all
+      render :index 
     end     
   end
 

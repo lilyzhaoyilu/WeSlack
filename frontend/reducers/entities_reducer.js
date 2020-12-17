@@ -4,10 +4,11 @@ import users from './users_reducer';
 import channels from './channels_reducer';
 import messages from './cmessages_reducer';
 import channelusers from './channelusers_reducer';
-
+import allchannels from './allchannels'
 const entitiesReducer =  combineReducers({
   users,
   channels,
+  allchannels,
   messages,
   channelusers,
 });

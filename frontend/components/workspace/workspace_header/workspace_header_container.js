@@ -5,16 +5,17 @@ import {
 
 import WorkSpaceHeader from './workspace_header';
 import {createChannelUser,fetchChannelUsers, deleteChannelUser} from '../../../actions/channeluser_actions';
+import{fetchAllChannels} from '../../../actions/channel_actions'
 
 const mapStateToProps = (state, ownProps) => {
   return {
   channels: state.entities.channels,
   users: state.entities.users,
-  currentChannel: state.entities.channels[ownProps.match.params.channelId],
+  currentChannel: state.entities.allchannels[ownProps.match.params.channelId],
   currentDM: ownProps.match.params.dmId,
   currentUser: state.session.currentUser,
-  channelusers: state.entities.channelusers
-  // currentChannelId: ownProps.match.params.channelId,
+  channelusers: state.entities.channelusers,
+  allchannels: state.entities.allchannels
   
   };
 };
@@ -24,6 +25,8 @@ const mapDispatchToProps = dispatch => ({
   createChannelUser: (channelId, userId) => dispatch(createChannelUser(channelId, userId)),
   fetchCMessages: (channelId) => dispatch(fetchCMessages(channelId)),
   fetchChannelUsers: (channelId) => dispatch(fetchChannelUsers(channelId)),
+  fetchAllChannels: () => dispatch((fetchAllChannels()))
+
   
 });
 

@@ -5,11 +5,13 @@ class MessageForm extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      body: ""
+      body: "",
+      prompt: "messageform-permission-noshow",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleKeypress = this.handleKeypress.bind(this);
     this.handleNewLine = this.handleNewLine.bind(this);
+    this.handleJoinChannel = this.handleJoinChannel.bind(this);
   }
 
   componentDidUpdate(prevProps){
@@ -33,14 +35,16 @@ class MessageForm extends React.Component {
     e.preventDefault();
 
     if (this.props.currentChannel){
-    const message = Object.assign({}, this.state, {channel_id: this.props.currentChannel.id, author_id: this.props.currentUser});
+      const {body} = this.state;
+    const message = Object.assign({}, body, {channel_id: this.props.currentChannel.id, author_id: this.props.currentUser});
     // debugger;
     //actual broadcasting, happens from the backend, triggered here 
     App.cable.subscriptions.subscriptions[0].speak(message);
     
     }
     else if(this.props.currentDM){
-      const message = Object.assign({}, this.state, {receiver_id: this.props.currentDM, author_id:this.props.currentUser});
+      const {body} = this.state
+      const message = Object.assign({}, body, {receiver_id: this.props.currentDM, author_id:this.props.currentUser});
 
       App.cable.subscriptions.subscriptions[0].speak(message);
       
@@ -64,21 +68,39 @@ class MessageForm extends React.Component {
   if (e.key === 'Enter' && e.ctrlKey) {
     this.handleNewLine(e);
   }else if (e.key === 'Enter' ){
-    console.log("Enter and shift key pressed haha")
+   
     this.handleSubmit(e);
   }
-};
+  };
+
+  handleJoinChannel(e){
+    e.preventDefault();
+    if(this.props.allchannels[this.props.match.params.channelId].public === true){
+    this.props.createChannelUser(this.props.match.params.channelId, this.props.currentUser).then(window.location.reload());}else{
+      this.setState({prompt: "messageform-permission"})
+  }}
 
 
   render() {
     const sendButtonStatus = this.state.body === ""? true: false;
-//   
+  
+    const joinChannel = () => {
+    if (this.props.currentChannel && (!(this.props.match.params.channelId in this.props.channels))){
+    return (
+    <div className="messageform-joinchannel">
+      You are viewing <strong>#{this.props.allchannels[this.props.match.params.channelId].name}</strong>
+      <br></br>
+    <button onClick={this.handleJoinChannel}>Join Channel</button>
+    <br></br>
+    <span className={this.state.prompt}>request has been sent to the channel admin</span>
+    </div>)
+    }
+  }
+
   return (
     
-   
-
     <form onSubmit={this.handleSubmit} className="messageform-form" onKeyPress={this.handleKey}>
-      
+      {joinChannel()}
       <textarea type="text" placeholder="Send message here"
         value={this.state.body}
         onChange={this.update()}
@@ -86,9 +108,12 @@ class MessageForm extends React.Component {
         onKeyDown={this.handleKeypress}/>
 
       <button className="messageform-submit" disabled={sendButtonStatus}><i className="far fa-paper-plane"></i></button>
-      <div><strong>Return</strong> to send      <strong>Shift + Return</strong> to add a new line</div>
+      
+      <div className="messageform-prompt"><strong>Return</strong> to send      <strong>Shift + Return</strong> to add a new line</div>
      
     </form>
+
+    
 
   
     )

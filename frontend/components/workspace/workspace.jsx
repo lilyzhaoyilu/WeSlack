@@ -34,6 +34,7 @@ class WorkSpace extends React.Component {
       <Message />
       <MessageForm />
       </div>
+      
     </div>
     )
     

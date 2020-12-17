@@ -11,8 +11,6 @@ class Message extends React.Component {
 
   componentDidMount(){
     
-    console.log("mount channel", this.props.match.params.channelId);
-    console.log("mount dm",this.props.match.params.dmId );
     if(this.props.match.params.channelId){
       this.props.fetchCMessages(this.props.match.params.channelId)
 
@@ -63,7 +61,7 @@ class Message extends React.Component {
 
       {
         received: data => {
-          console.log("mount subssssssssssssssssssssssssssssssssssssssssssssssssssssssssss")
+          
           that.props.hahareceiveCMessage(data.message);
         }, 
         speak: function (data) {
@@ -75,9 +73,6 @@ class Message extends React.Component {
   }
 
   componentDidUpdate(prevProps){
-    
-    console.log("update channel", this.props.match.params.channelId);
-    console.log("update dm",this.props.match.params.dmId );
 
     if (this.props.match.params.channelId !== prevProps.match.params.channelId){
       this.props.fetchCMessages(this.props.match.params.channelId)
@@ -95,7 +90,7 @@ class Message extends React.Component {
 
       {
         received: data => {
-          console.log("update sub")
+          
           that.props.hahareceiveCMessage(data.message);
         }, 
         speak: function (data) {

@@ -1,6 +1,6 @@
 # README
 ![weslack](https://github.com/lilyzhaoyilu/WeSlack/blob/main/app/assets/images/slack.svg=30)
-
+*The icon is from https://icons8.com/icon/46825/slack, thanks to the creator!*
 ---
 
 [LiveApp](https://weslackin.herokuapp.com/#/)

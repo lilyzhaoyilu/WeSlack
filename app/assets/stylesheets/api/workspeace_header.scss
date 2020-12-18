@@ -44,6 +44,7 @@
 .workspace-header-right{
   display: flex;
   flex-direction: row;
+  align-items:baseline;
 }
 .workspace-header-right > *{
   padding-left:10px;
@@ -59,11 +60,16 @@
 
 
 
-.workspace-header-leave img, .workspace-header-memberinfo img{
+.workspace-header-leave img {
   width: 18px;
   height: 18px;
   background-color: transparent;
 }
+
+.workspace-header-memberinfo i{
+  font-size: 19px;
+}
+
 
 .workspace-header-leave,.workspace-header-memberinfo{
   border: none;

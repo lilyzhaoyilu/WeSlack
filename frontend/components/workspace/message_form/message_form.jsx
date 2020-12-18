@@ -109,8 +109,10 @@ class MessageForm extends React.Component {
         onChange={this.update()}
         className="messageform-input"
         onKeyDown={this.handleKeypress}/>
+      
+      <div className="messageform-form-gray"><button className="messageform-submit" disabled={sendButtonStatus}><i className="far fa-paper-plane"></i></button></div>
 
-      <button className="messageform-submit" disabled={sendButtonStatus}><i className="far fa-paper-plane"></i></button>
+      
       
       <div className="messageform-prompt"><strong>Return</strong> to send      <strong>Shift + Return</strong> to add a new line</div>
      

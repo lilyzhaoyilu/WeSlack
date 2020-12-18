@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import {createChannel} from '../../../actions/channel_actions'
+import {createChannel, fetchChannels} from '../../../actions/channel_actions'
 
 
 import CreateChannel from './createchannel';
@@ -15,6 +15,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   processForm: (channel) => dispatch(createChannel(channel)),
+  fetchChannels: (userId) => dispatch(fetchChannels(userId)),
 });
 
 export default connect(

@@ -25,9 +25,9 @@
 }
 
 
-.messageform-form div{
+.messageform-prompt{
   width: 100%;
-  overflow: auto;
+  
   box-sizing: border-box;
   outline: none;
   resize: none;
@@ -44,11 +44,55 @@
   
 // }
 
-.messageform-form button{
+.messageform-submit{
   position: absolute;
   top: 80px;
   right: 0;
   width: 30px;
   height: 30px;
+  border:none;
+  outline: none;
+  background-color:#007a5a
+}
+.messageform-submit:disabled{
+  background-color:#cdd4d2;
 }
 
+
+
+
+.messageform-joinchannel{
+  position: absolute;
+  background-color:rgb(248, 248, 248);
+  padding: 20px;
+  z-index: 10;
+  text-align: center;
+  height: 120px;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 18px;
+  line-height: 24px;
+  vertical-align: middle;
+  
+}
+.messageform-joinchannel button{
+  outline: none;
+  background-color:#0a520a;
+  border:none;
+  border-radius:  4px;
+  color:white;
+  font-weight:600;
+  margin: 10px 0 0px;
+  height: 36px;
+  cursor: pointer;
+
+}
+
+.messageform-permission-noshow {
+  display: none;
+}
+.messageform-permission{
+  size: 10px;
+  opacity: 0.7;
+  // margin-top: -10px;
+}

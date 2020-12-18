@@ -5,7 +5,8 @@ class Api::ChannelsController < ApplicationController
       @channels = current_user.channels 
       render :index 
     else 
-      render json:["error"], status: 401
+      @channels = Channel.all
+      render :index 
     end     
   end
 
@@ -52,7 +53,7 @@ class Api::ChannelsController < ApplicationController
   private
 
   def channel_params
-    params.require(:channel).permit(:name, :public)
+    params.require(:channel).permit(:name, :public, :description)
   end
 
   # def cast_channel_to_users

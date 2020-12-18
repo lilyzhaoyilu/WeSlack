@@ -15,10 +15,10 @@ class Search extends React.Component {
     this.handleInput = this.handleInput.bind(this);
     this.handleFocuse = this.handleFocuse.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    this.props.fetchAllChannels();
     // this.handleClickOutside = this.handleClickOutside.bind(this);
     this.container = React.createRef();
   }
-
 
 ///handle searching
   handleInput(event) {
@@ -27,10 +27,21 @@ class Search extends React.Component {
 
   matches() {
     const matches = [];
-    this.props.channels.forEach(channel => {
+
+    const lockDisplay = (id) => {
+      let res = this.props.allchannelsya[id].public;
+      if (res === true){
+        return  <img className="search-li-image" src={window.images.jinghaob}></img>
+      }else{
+        return <img className="search-li-image" src={window.images.lockb}  ></img>
+      }
+    }
+
+
+    this.props.allchannels.forEach(channel => {
       const sub = channel.name.slice(0, this.state.inputValue.length);
       if (sub.toLowerCase() === this.state.inputValue.toLowerCase()) {
-        matches.push(<button onMouseDown={() => this.props.history.push(`/client/channel/${channel.id}`)}>#{channel.name}</button>);
+        matches.push(<button onMouseDown={() => this.props.history.push(`/client/channel/${channel.id}`)}>{lockDisplay(channel.id)}{channel.name}</button>);
       }
     });
 
@@ -38,7 +49,7 @@ class Search extends React.Component {
       const sub = user.username.slice(0, this.state.inputValue.length);
       if (sub.toLowerCase() === this.state.inputValue.toLowerCase()) {
         let dmUrl = [user.id, this.props.currentUser].sort((a, b) => (a-b)).join('')
-        matches.push(<button onMouseDown={() => this.props.history.push(`/client/dm/${dmUrl}`)}>{user.username}</button>);
+        matches.push(<button onMouseDown={() => this.props.history.push(`/client/dm/${dmUrl}`)}><i className="far fa-user"></i>{user.username}</button>);
       }
     });
 
@@ -97,12 +108,14 @@ componentDidUpdate(prevProps){
         <li key={`search-result-${i}`} onClick={this.selectName}>{result}</li>
       );
     });
+
+    
     
      
   return (
     
     <div className='search' ref={this.container} onFocus={this.handleFocuse} onBlur={this.handleClose}>
-      {console.log(this.state)}
+     
           <input
           className='search-input'
           onChange={this.handleInput}

@@ -14,23 +14,42 @@ class TopBar extends React.Component {
     
      
   return (
-    <div className="main-top-nav">
+    // <div className="main-top-nav">
 
-      <div className="top-navbar-left">
-        <Link to="/">
-          <img src={window.images.logo} ></img>
-          <div>WeSlack</div>
-        </Link>
-      </div>
+    //   <li className="top-navbar-left">
+    //     <Link to="/">
+    //       <img src={window.images.logo} ></img>
+    //       <div>WeSlack</div>
+    //     </Link>
+    //   </li>
 
-      <div className="top-navbar-mid"><Search />
-      </div>
+    //   <li className="top-navbar-mid"><Search />
+    //   </li>
 
-      <div className="top-navbar-right">
-      <User/>
-      </div>
+    //   <li className="top-navbar-right">
+    //   <User/>
+    //   </li>
     
-    </div>
+    // </div>
+
+
+ <div className="main-top-nav">
+
+<div className="top-navbar-left">
+  <Link to="/">
+    <img src={window.images.logo} ></img>
+    <div>WeSlack</div>
+  </Link>
+</div>
+
+<div className="top-navbar-mid"><Search />
+</div>
+
+<div className="top-navbar-right">
+<User/>
+</div>
+
+</div> 
     )
     
   }

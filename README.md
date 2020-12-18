@@ -1,24 +1,52 @@
 # README
+![weslack](https://github.com/lilyzhaoyilu/WeSlack/blob/main/app/assets/images/slack.svg=30)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+---
 
-Things you may want to cover:
+[LiveApp](https://weslackin.herokuapp.com/#/)
 
-* Ruby version
+WeSlack is a clone of Slack. It is a communciation webapp where users can send live messages in channels and directly to each other. It was built utlizing a Ruby on Rails backend with a React/Redux fronted. 
 
-* System dependencies
+This project was created within approxiamtely 2 weeks as a demo project, and this is my first solo project. There are many parts that can be improved, but hey, it is how things start.
 
-* Configuration
+### Features
+#### User Authentication
+* BCrypt encrypted user authentication from frontend to backend
+* Users can sign up, and log in. When they log in, their information is still there. 
+* After users login, they can refresh page without being logged out.
+* Can log out through right top corner.
+* Before logging in, users will be redirected to the login page.
 
-* Database creation
+#### Channels
+* Users can chat in channels, live
+* Users can see the member number and mumber list in the channel
+  * Users can click on the member list and send direct message to the member
+* Users can see the name and the channel description
+* Only the channles that a user has joined will show up on the user's page
+* Users can only send messages in the channels that they have joined
+* Users can see all the channels through searching, and request to join
+  * if a user requests to join a public channel, the requst will be permitted immediately.
+  * if a user requests to join a private channel, it shows that the request has been sent
+* Users can leave a channel
+* Users can create a channel
+  * create channel button is disabled when the channel name is empty
+  * can choose to create a public or private channel
+  * can put description in the creation channel form
+  * can exit the create channel form 
+  * the form disapears after creating the channel successfully 
 
-* Database initialization
+#### Direct Messages
+* Users can send messages to other users
 
-* How to run the test suite
+#### Live Messaging
+* Live messaging is implemented by using Action Cable
+* Works in both channels and direct messages
+* Can send with *enter* and add a line with *enter + ctrl*
+* Send is disabled when the input area is empty 
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
+#### Search
+* Can search all channels, including the ones that the user has not joined
+* Can search all users
+* Auto matches search text    (*the search function is implemented through a very naive approach that will only work for demo purpose/very small amount of data*)
+* Users can click on the search result and be redirected to the message page to the corresponding channel/user. 

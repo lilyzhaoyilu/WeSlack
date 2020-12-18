@@ -1,8 +1,8 @@
 # README
-![weslack](https://github.com/lilyzhaoyilu/WeSlack/blob/main/app/assets/images/slack.svg)
-*The icon is from https://icons8.com/icon/46825/slack, thanks to the creator!*
----
+![weslack](https://github.com/lilyzhaoyilu/WeSlack/blob/main/app/assets/images/weslack.png)
 
+---
+*The icon is from https://icons8.com/icon/46825/slack, thanks to the creator!*
 [LiveApp](https://weslackin.herokuapp.com/#/)
 
 WeSlack is a clone of Slack. It is a communciation webapp where users can send live messages in channels and directly to each other. It was built utlizing a Ruby on Rails backend with a React/Redux fronted. 

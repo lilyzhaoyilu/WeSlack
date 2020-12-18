@@ -61,8 +61,9 @@ class CreateChannel extends React.Component {
     e.preventDefault();
     const cchannel = Object.assign({}, this.state);
     delete cchannel.show;
-    this.props.processForm(cchannel); 
     this.handleNotShow(e);
+    this.props.processForm(cchannel)
+    // .then(window.location.reload())
   }
 
 
@@ -94,7 +95,7 @@ class CreateChannel extends React.Component {
 
       <div className='cchannel-flexpart'>
       <h3 className='cchannel-flexpart1'>Create a channel</h3>
-      <div className='cchannel-flexpart2'>Channels are where your team coomunicates. They're best when organized arounda topic.</div>
+      <div className='cchannel-flexpart2'>Channels are where your team communicates. They're best when organized around a topic.</div>
       
       <div className='cchannel-flexpart3'>
       <label>Name</label>

@@ -35,16 +35,19 @@ class MessageForm extends React.Component {
     e.preventDefault();
 
     if (this.props.currentChannel){
-      const {body} = this.state;
-    const message = Object.assign({}, body, {channel_id: this.props.currentChannel.id, author_id: this.props.currentUser});
+     let dummy = Object.assign({},this.state)
+     delete dummy[prompt]
+    const message = Object.assign({}, dummy, {channel_id: this.props.currentChannel.id, author_id: this.props.currentUser});
+   
     // debugger;
     //actual broadcasting, happens from the backend, triggered here 
     App.cable.subscriptions.subscriptions[0].speak(message);
     
     }
     else if(this.props.currentDM){
-      const {body} = this.state
-      const message = Object.assign({}, body, {receiver_id: this.props.currentDM, author_id:this.props.currentUser});
+      let dummy = Object.assign({},this.state)
+     delete dummy[prompt]
+      const message = Object.assign({}, dummy, {receiver_id: this.props.currentDM, author_id:this.props.currentUser});
 
       App.cable.subscriptions.subscriptions[0].speak(message);
       

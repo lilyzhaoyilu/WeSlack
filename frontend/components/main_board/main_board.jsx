@@ -12,6 +12,7 @@ import {
 import TopBar from '../top_bar/top_bar_container';
 import SideBar from '../side_bar/side_bar_container';
 import WorkSpace from '../workspace/workspace_container'
+import SideDetail from '../side_details/sidedetails_container'
 
 
 
@@ -51,8 +52,12 @@ class MainBoard extends React.Component {
         </div>
 
         <div className="main-workspace">
-          <Route exact path="/client/channel/:channelId" component={WorkSpace}/>
-          <Route exact path="/client/dm/:dmId" component={WorkSpace}/>
+          <Route path="/client/channel/:channelId" component={WorkSpace}/>
+          <Route path="/client/dm/:dmId" component={WorkSpace}/>
+        </div>
+
+        <div className="main-sidedetail">
+        <Route exact path="/client/channel/:channelId/details" component={SideDetail}/>
         </div>
 
       </div>

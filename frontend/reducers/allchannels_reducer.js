@@ -6,7 +6,8 @@ const allChannelsReducer = (state = {}, action) => {
   switch(action.type) {
     case RECEIVE_ALL_CHANNELS:
       return Object.assign({}, state, action.allchannels);
-
+    case RECEIVE_CHANNEL:
+      return Object.assign({}, state, {[action.channel.id]:action.channel});
     default:
       return state;
   }

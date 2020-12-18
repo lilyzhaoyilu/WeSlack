@@ -15,7 +15,7 @@ const mapStateToProps = (state, ownProps) => {
   currentDM: ownProps.match.params.dmId,
   currentUser: state.session.currentUser,
   channelusers: state.entities.channelusers,
-  allchannels: state.entities.allchannels
+  allchannels: state.entities.allchannels,
   
   };
 };

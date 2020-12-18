@@ -53,7 +53,7 @@ class Api::ChannelsController < ApplicationController
   private
 
   def channel_params
-    params.require(:channel).permit(:name, :public)
+    params.require(:channel).permit(:name, :public, :description)
   end
 
   # def cast_channel_to_users

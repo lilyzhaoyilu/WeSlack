@@ -9,6 +9,7 @@ const channelsReducer = (state = {}, action) => {
     case RECEIVE_CHANNELS:
       return Object.assign({}, state, action.channels);
     case RECEIVE_CHANNEL:
+      
       return Object.assign({}, state, {[action.channel.id]:action.channel});
     case REMOVE_CHANNEL:
       let nextState = Object.assign({}, state);

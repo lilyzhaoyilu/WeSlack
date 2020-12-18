@@ -27,7 +27,7 @@
 
 .messageform-prompt{
   width: 100%;
-  overflow: auto;
+  
   box-sizing: border-box;
   outline: none;
   resize: none;
@@ -50,6 +50,12 @@
   right: 0;
   width: 30px;
   height: 30px;
+  border:none;
+  outline: none;
+  background-color:#007a5a
+}
+.messageform-submit:disabled{
+  background-color:#cdd4d2;
 }
 
 

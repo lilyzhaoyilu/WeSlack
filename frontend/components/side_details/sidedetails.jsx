@@ -1,0 +1,62 @@
+import React from 'react';
+import { Link, Redirect } from 'react-router-dom';
+
+
+class SideDetail extends React.Component {
+  constructor(props){
+    super(props);
+   
+  // this.handleGoBackToChannel = this.handleGoBackToChannel.bind(this);
+  }
+
+
+  // handleGoBackToChannel(){
+  //   let copy_url = (' ' + this.props.match.params.channelId).slice(1);
+  //   console.log("copy",copy_url);
+  //   // let newUrl = `client/channel/${copy_url}`;
+  //   // <Redirect to={`client/channel/${copy_url}`} />
+  //   ()=>(this.props.history.push(`/client/channel/${copy_url}`));
+  // }
+
+
+
+
+  
+
+  render() {
+    const channelusers = () => { 
+      if (this.props.match.params.channelId){
+        return(
+      Object.values(this.props.channelusers).map(channelUserId => 
+      {
+        let actualUrl = [this.props.currentUser, channelUserId.userId].sort((a, b) => (a-b)).join('');
+        return(
+      <li key={`channelusers-${channelUserId.userId}`}>
+        <Link to={`/client/dm/${actualUrl}`}>
+      <img src={window.images.dprofile}></img>
+      {this.props.users[channelUserId.userId] ? this.props.users[channelUserId.userId].username : ""}</Link>
+      </li>)
+    
+    
+    
+    
+    }))}}
+
+   
+
+    return (
+    <div className="details">
+      {console.log(this.props)}
+      <Link to={`/client/channel/${this.props.match.params.channelId}`}><i className="fas fa-times"></i></Link>
+    
+      {channelusers()}
+      </div>
+    
+
+  ) 
+  }
+};
+
+
+export default SideDetail;
+  /* <button onClick={this.handleGoBackToChannel}><i className="fas fa-times"></i></button> */

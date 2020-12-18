@@ -10,6 +10,7 @@ WeSlack is a clone of Slack. It is a communciation webapp where users can send l
 This project was created within approxiamtely 2 weeks as a demo project, and this is my first solo project. There are many parts that can be improved, but hey, it is how things start.
 
 ### Features
+![Main Page](https://github.com/lilyzhaoyilu/WeSlack/blob/main/app/assets/images/client.png)
 #### User Authentication
 * BCrypt encrypted user authentication from frontend to backend
 * Users can sign up, and log in. When they log in, their information is still there. 
@@ -35,6 +36,7 @@ This project was created within approxiamtely 2 weeks as a demo project, and thi
   * can exit the create channel form 
   * the form disapears after creating the channel successfully 
 
+![Channel members and buttons](https://github.com/lilyzhaoyilu/WeSlack/blob/main/app/assets/images/memberlist.png)
 #### Direct Messages
 * Users can send messages to other users
 
@@ -50,3 +52,5 @@ This project was created within approxiamtely 2 weeks as a demo project, and thi
 * Can search all users
 * Auto matches search text    (*the search function is implemented through a very naive approach that will only work for demo purpose/very small amount of data*)
 * Users can click on the search result and be redirected to the message page to the corresponding channel/user. 
+![Search](https://github.com/lilyzhaoyilu/WeSlack/blob/main/app/assets/images/search.png)
+

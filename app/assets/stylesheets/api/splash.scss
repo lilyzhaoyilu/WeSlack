@@ -27,7 +27,7 @@
   justify-content: left;
   text-decoration: none;
   color:black;
-  padding-top: 10px;
+  padding-top: 13px;
   padding-right: 0px;
   padding-bottom: 10px;
  
@@ -39,10 +39,21 @@
   padding: 10px;
 }
 
-.splash-logo-bro h2{
+.splash-logo-bro h1{
   padding-left: 5px;
   padding-right:10px;
 }
+.splash-logo-bro h1 button{
+  outline: none;
+  background-color: transparent;
+  border: none;
+  font-size: 25px ;
+  font-weight: 700;
+  padding-bottom:2px;
+  cursor: pointer;
+}
+
+
 ///the logo img
 .splash-logo img{
   padding-right: 5px;
@@ -153,4 +164,53 @@
 
 .splash-content-three{
   background-color: #f1f0e2;
+}
+
+
+.splash-content-two-features li{
+  list-style: none;
+  margin: 10px;
+}
+
+.splash-content-three-introduction li{
+  list-style: none;
+  padding: 10px;
+  font-size: 28px;
+}
+
+.splash-content-three-introduction li svg{
+  padding-left: 10px;
+}
+
+.splash-content-footer{
+  
+  color: gray;
+  font-size:35px;
+  position: relative;
+}
+
+.splash-content-footer-icons{
+ position: absolute;
+ left: 42%;
+}
+
+.splash-content-footer-icons a{
+  margin: 0px 15px 0px;
+}
+.splash-content-footer-aboutme{
+  text-align: center;
+}
+
+// .splash-content-footer-icons a:nth-child(1){
+//   position:absolute;
+//   left: 45%;
+// }
+// .splash-content-footer-icons a:nth-child(2){
+//   position:absolute;
+//   left: 50%;
+// }
+.splash-content-footer-icons a:nth-child(3){
+  width:50px;
+  position: absolute;
+  
 }

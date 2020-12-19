@@ -75,7 +75,7 @@ class WorkSpaceHeader extends React.Component {
     const channelButtons = () => {
       if(this.props.currentChannel){
         return(<div>
-          <button className="workspace-header-memberinfo" onClick={this.handleMemberInfo}><i class="fas fa-users"></i></button>
+          <button className="workspace-header-memberinfo" onClick={this.handleMemberInfo}><i className="fas fa-users"></i></button>
           
         <button className="workspace-header-leave" onClick={this.handleLeaveChannel}><img src={window.images.leave}></img></button></div>
         )

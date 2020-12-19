@@ -142,7 +142,7 @@
 }
 
 .splash-one-clone,.splash-one-framworks,.splash-content-two-features,.splash-content-three-introduction{
-  font-size:calc(1.125rem + (2 * (100vw - 400px)/ 624));
+  font-size:calc(1.4rem + (2 * (100vw - 300px)/ 624));
   line-height:1;
   letter-spacing: -0.2px;
   max-width: 27rem;
@@ -175,7 +175,10 @@
 .splash-content-three-introduction li{
   list-style: none;
   padding: 10px;
-  font-size: 28px;
+  font-size:calc(1.4rem + (2 * (100vw - 300px)/ 624));
+  line-height:1;
+  letter-spacing: -0.2px;
+  max-width: 27rem;
 }
 
 .splash-content-three-introduction li svg{

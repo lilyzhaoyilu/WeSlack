@@ -46,8 +46,9 @@ class SideDetail extends React.Component {
 
     return (
     <div className="details">
-      {console.log(this.props)}
       <Link to={`/client/channel/${this.props.match.params.channelId}`}><i className="fas fa-times"></i></Link>
+      <div className="details-title">Member List</div>
+      <div className="details-subtitle">click a member to message</div>
     
       {channelusers()}
       </div>

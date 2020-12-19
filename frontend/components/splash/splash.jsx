@@ -137,7 +137,7 @@ constructor(props){
       <div className="splash-content-footer-icons">
       <a target="_blank" href="https://github.com/lilyzhaoyilu"><Icon icon={githubFilled} /></a>
       <a target="_blank" href="https://www.linkedin.com/in/lilyzhaoyilu/"><Icon icon={linkedinFilled} /></a>
-      <a target="_blank" href="http://www.lilylu.me"><i class="far fa-address-card"></i></a>
+      <a target="_blank" href="http://www.lilylu.me"><i className="far fa-address-card"></i></a>
       
       </div>
     </div>

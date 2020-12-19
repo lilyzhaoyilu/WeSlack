@@ -19,22 +19,26 @@ This project was created within approxiamtely 10 days as a demo project, and thi
 * Before logging in, users will be redirected to the login page.
 
 ### Channels
-* Users can chat in channels, live
-* Users can see the member number and mumber list in the channel
+* On users' side bar
+  * Only the channles that a user has joined will show up on the user's page
+  * Users can click to go to different channels
+* About channels' authentication
+  * Users can't send messages in the channel they haven't joined
+  * Users can leave a channel
+  * Users can create a channel
+    * create channel button is disabled when the channel name is empty
+    * can choose to create a public or private channel
+    * can put description in the creation channel form
+    * can exit the create channel form 
+    * the form disapears after creating the channel successfully 
+  * Users can see all the channels through searching, and request to join
+    * if a user requests to join a public channel, the requst will be permitted immediately.
+    * if a user requests to join a private channel, it shows that the request has been sent
+* About channels' info and member list 
+  * Users can see the member number and mumber list in the channel
   * Users can click on the member list and send direct message to the member
-* Users can see the name and the channel description
-* Only the channles that a user has joined will show up on the user's page
-* Users can only send messages in the channels that they have joined
-* Users can see all the channels through searching, and request to join
-  * if a user requests to join a public channel, the requst will be permitted immediately.
-  * if a user requests to join a private channel, it shows that the request has been sent
-* Users can leave a channel
-* Users can create a channel
-  * create channel button is disabled when the channel name is empty
-  * can choose to create a public or private channel
-  * can put description in the creation channel form
-  * can exit the create channel form 
-  * the form disapears after creating the channel successfully 
+  * Users can see the name and the channel description
+
 
 ![Channel members and buttons](https://github.com/lilyzhaoyilu/WeSlack/blob/main/app/assets/images/memberlist.png)
 ### Direct Messages

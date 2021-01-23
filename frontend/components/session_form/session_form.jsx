@@ -10,7 +10,8 @@ export default class SessionForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
-  
+    this.handleClearSessionErrors = this.handleClearSessionErrors.bind(this);
+    
   }
 
   update(field) {
@@ -43,6 +44,17 @@ export default class SessionForm extends React.Component {
     );
   }
 
+  // componentDidUpdate(prevProps){
+    
+  //   this.props.clearSessionErrors();
+  // }
+   
+  handleClearSessionErrors(){
+    console.log("fire")
+    this.props.clearSessionErrors();
+  }
+ 
+
 
   render() {
     
@@ -69,7 +81,7 @@ export default class SessionForm extends React.Component {
       <div className="session-words">
         <h2>Let's get started</h2>
         <br/>
-        <h3>Please {this.props.formType} or {this.props.navLink}</h3>
+        <h3>Please {this.props.formType} or <button className="session-switch" onClick={this.handleClearSessionErrors}>{this.props.navLink}</button></h3>
       </div>
 
 
@@ -85,7 +97,7 @@ export default class SessionForm extends React.Component {
           onChange={this.update('password')}
           className="session-input"/>
           
-          <input className="session-submit" type="submit" value={buttonValue}/>
+          <input className="session-submit" type="submit" value={buttonValue} />
         </form>
 
           <button className="session-try-demo" onClick={this.handleDemo}>Demo User</button>

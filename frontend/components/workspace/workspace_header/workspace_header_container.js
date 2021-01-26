@@ -5,7 +5,7 @@ import {
 
 import WorkSpaceHeader from './workspace_header';
 import {createChannelUser,fetchChannelUsers, deleteChannelUser} from '../../../actions/channeluser_actions';
-import{fetchAllChannels} from '../../../actions/channel_actions'
+import{fetchAllChannels, deleteChannel} from '../../../actions/channel_actions'
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -25,7 +25,8 @@ const mapDispatchToProps = dispatch => ({
   createChannelUser: (channelId, userId) => dispatch(createChannelUser(channelId, userId)),
   fetchCMessages: (channelId) => dispatch(fetchCMessages(channelId)),
   fetchChannelUsers: (channelId) => dispatch(fetchChannelUsers(channelId)),
-  fetchAllChannels: () => dispatch((fetchAllChannels()))
+  fetchAllChannels: () => dispatch((fetchAllChannels())),
+  deleteChannel: (channelId) => dispatch(deleteChannel(channelId)),
 
   
 });

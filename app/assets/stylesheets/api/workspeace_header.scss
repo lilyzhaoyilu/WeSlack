@@ -69,9 +69,12 @@
 .workspace-header-memberinfo i{
   font-size: 19px;
 }
+.fa-trash-alt{
+  font-size: 20px;
+}
 
 
-.workspace-header-leave,.workspace-header-memberinfo{
+.workspace-header-leave,.workspace-header-memberinfo,.workspace-header-deletechannel{
   border: none;
   outline: none;
   background-color: transparent;

@@ -10,6 +10,7 @@ class WorkSpaceHeader extends React.Component {
   this.handleLeaveChannel = this.handleLeaveChannel.bind(this);
   this.props.fetchAllChannels();
   this.handleMemberInfo = this.handleMemberInfo.bind(this);
+  this.handleDeleteChannel = this.handleDeleteChannel.bind(this);
   }
 
   componentDidMount(){
@@ -28,6 +29,10 @@ class WorkSpaceHeader extends React.Component {
     
     this.props.deleteChannelUser(this.props.match.params.channelId, this.props.currentUser).then(window.location.reload());
   }
+  
+  handleDeleteChannel(){
+    this.props.deleteChannel(this.props.match.params.channelId).then(window.location.reload());
+  }
 
   handleMemberInfo(){
     // debugger;
@@ -42,6 +47,7 @@ class WorkSpaceHeader extends React.Component {
     }
     
   }
+
   
   render() {
    
@@ -74,10 +80,18 @@ class WorkSpaceHeader extends React.Component {
 
     const channelButtons = () => {
       if(this.props.currentChannel){
-        return(<div>
-          <button className="workspace-header-memberinfo" onClick={this.handleMemberInfo}><i className="fas fa-users"></i></button>
-          
-        <button className="workspace-header-leave" onClick={this.handleLeaveChannel}><img src={window.images.leave}></img></button></div>
+        let dis = this.props.currentChannel.name == "general" ? true : false
+
+        return(
+        <div>
+        
+        <button className="workspace-header-memberinfo" onClick={this.handleMemberInfo}><i className="fas fa-users"></i></button>
+
+        <button className="workspace-header-leave" onClick={this.handleLeaveChannel}><img src={window.images.leave}></img></button>
+
+        <button disabled={dis}className="workspace-header-deletechannel" onClick={this.handleDeleteChannel}><i className="far fa-trash-alt"></i></button>
+
+        </div>
         )
       }
     }

@@ -43,7 +43,6 @@ export const deleteChannel = (channelId) =>{
   return $.ajax({
     url:`/api/channels/${channelId}`,
     method:"DELETE",
-    
   })
 }
 

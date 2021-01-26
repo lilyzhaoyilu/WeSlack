@@ -45,9 +45,9 @@ class Api::ChannelsController < ApplicationController
   end
 
   def destroy
+  
     @channel = Channel.find(params[:id])
     @channel.destroy
-    
   end
 
   private

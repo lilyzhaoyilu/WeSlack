@@ -186,19 +186,26 @@
 }
 
 .splash-content-footer{
-  
   color: gray;
   font-size:35px;
-  position: relative;
+  // position: relative;
+  // display: flex;
 }
 
+// .splash-content-footer-icons{
+//  position: absolute;
+//  left: 42%;
+// }
+
 .splash-content-footer-icons{
- position: absolute;
- left: 42%;
-}
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+ }
 
 .splash-content-footer-icons a{
   margin: 0px 15px 0px;
+  font-size: 50px;
 }
 .splash-content-footer-aboutme{
   text-align: center;
@@ -212,8 +219,10 @@
 //   position:absolute;
 //   left: 50%;
 // }
-.splash-content-footer-icons a:nth-child(3){
-  width:50px;
-  position: absolute;
+
+
+// .splash-content-footer-icons a:nth-child(3){
+//   width:50px;
+//   position: absolute;
   
-}
+// }

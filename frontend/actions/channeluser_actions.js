@@ -21,8 +21,8 @@ export const fetchChannelUsers = (channelId, userId) => dispatch => {
   .then(cId =>dispatch(receiveChannelUsers(cId)))
 }
 
-export const createChannelUser = (channelId, userId) => dispatch => {
-  return ChannelUserApiUtil.createChannelUser(channelId, userId)
+export const createChannelUser = (channelId, userId, pending=false) => dispatch => {
+  return ChannelUserApiUtil.createChannelUser(channelId, userId, pending)
   .then(userId =>dispatch(receiveChannelUsers(userId)))
 }
 

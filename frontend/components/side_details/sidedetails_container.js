@@ -8,6 +8,7 @@ const mapStateToProps = (state, ownProps) => {
     currentUser: state.session.currentUser,
     users: state.entities.users,
     channelusers: state.entities.channelusers,
+    currentChannel: state.entities.allchannels[ownProps.match.params.channelId],
   };
 };
 

@@ -78,18 +78,19 @@ class MessageForm extends React.Component {
 
   handleJoinChannel(e){
     e.preventDefault();
+
     if(this.props.allchannels[this.props.match.params.channelId].public === true){
-    this.props.createChannelUser(this.props.match.params.channelId, this.props.currentUser).then(window.location.reload());}else{
+    this.props.createChannelUser(this.props.match.params.channelId, this.props.currentUser).then(window.location.reload());
+    }else{
+      this.props.createChannelUser(this.props.match.params.channelId, this.props.currentUser, "true")
       this.setState({prompt: "messageform-permission"})
-  }}
-
-
-  render() {
-    const sendButtonStatus = this.state.body === ""? true: false;
+    }}
   
-    const joinChannel = () => {
-    if (this.props.currentChannel && (!(this.props.match.params.channelId in this.props.channels))){
-    return (
+  joinChannelBlock(){
+    if (this.props.currentChannel){
+      // debugger;
+      if((this.props.channelUsers[this.props.currentUser]) == undefined){
+    return(
     <div className="messageform-joinchannel">
       You are viewing <strong>#{this.props.allchannels[this.props.match.params.channelId].name}</strong>
       <br></br>
@@ -97,13 +98,32 @@ class MessageForm extends React.Component {
     <br></br>
     <span className={this.state.prompt}>request has been sent to the channel admin</span>
     </div>)
+    }}
+      
+  if(this.props.channelUsers[this.props.currentUser]){
+    if(this.props.channelUsers[this.props.currentUser].pending === true){
+        return(
+          <div className="messageform-joinchannel">
+            You are viewing <strong>#{this.props.allchannels[this.props.match.params.channelId].name}</strong>
+            <br></br>
+          <button onClick={this.handleJoinChannel}>Join Channel</button>
+          <br></br>
+          <span className="messageform-permission">request has been sent to the channel admin</span>
+          </div>)
+      }
     }
   }
 
+
+
+  render() {
+    const sendButtonStatus = this.state.body === ""? true: false;
+  
+   
   return (
     
     <form onSubmit={this.handleSubmit} className="messageform-form" onKeyPress={this.handleKey}>
-      {joinChannel()}
+      {this.joinChannelBlock()}
       <textarea type="text" placeholder="Send message here"
         value={this.state.body}
         onChange={this.update()}

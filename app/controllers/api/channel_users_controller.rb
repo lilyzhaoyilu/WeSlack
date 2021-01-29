@@ -12,6 +12,7 @@ class Api::ChannelUsersController < ApplicationController
 
   def create
     @channeluser = ChannelUser.new(channeluser_params)
+    # debugger;
     if @channeluser.save
       
     else 
@@ -31,7 +32,7 @@ class Api::ChannelUsersController < ApplicationController
 
   private
   def channeluser_params
-    params.require(:channeluser).permit(:user_id, :channel_id)
+    params.require(:channeluser).permit(:user_id, :channel_id, :pending)
   end 
   
   

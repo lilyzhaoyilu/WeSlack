@@ -80,14 +80,22 @@ class WorkSpaceHeader extends React.Component {
 
     const channelButtons = () => {
       if(this.props.currentChannel){
-        let dis = this.props.currentChannel.name == "general" ? true : false
+        // debugger;
+        let dis = (this.props.currentChannel.name == "general" || this.props.currentChannel.admin_id != this.props.currentUser) ? true : "";
+    
+    // const leaveChannelDisable = () =>{
+    //   if(this.props.currentChannel.admin_id === this.props.currentUser)
+    //   return true
+    // }
+       
 
         return(
         <div>
         
         <button className="workspace-header-memberinfo" onClick={this.handleMemberInfo}><i className="fas fa-users"></i></button>
 
-        <button className="workspace-header-leave" onClick={this.handleLeaveChannel}><img src={window.images.leave}></img></button>
+        <button 
+        disabled={this.props.currentChannel.admin_id === this.props.currentUser} className="workspace-header-leave" onClick={this.handleLeaveChannel}><i className="fas fa-sign-out-alt"></i></button>
 
         <button disabled={dis}className="workspace-header-deletechannel" onClick={this.handleDeleteChannel}><i className="far fa-trash-alt"></i></button>
 

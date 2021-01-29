@@ -18,29 +18,40 @@ class SideDetail extends React.Component {
   //   ()=>(this.props.history.push(`/client/channel/${copy_url}`));
   // }
 
+  displayAdmin(userIdInput){
+    if(this.props.currentChannel){
+      
+      if(this.props.currentChannel.admin_id === userIdInput){return <span className="details-admin">  admin</span>}
+    }
+  }
+
+
+
+
+  channelusers ()  { 
+    if (this.props.match.params.channelId){
+      return(
+    Object.values(this.props.channelusers).map(channelUserId => 
+    {
+      let actualUrl = [this.props.currentUser, channelUserId.userId].sort((a, b) => (a-b)).join('');
+      
+      return(
+      <li key={`channelusers-${channelUserId.userId}`}>
+
+      <Link to={`/client/dm/${actualUrl}`}>
+      <img src={window.images.dprofile}></img>
+      {this.props.users[channelUserId.userId] ? this.props.users[channelUserId.userId].username : ""}</Link>
+      {this.displayAdmin(channelUserId.userId)}
+      </li>)
+  }
+  ))}}
 
 
 
   
 
   render() {
-    const channelusers = () => { 
-      if (this.props.match.params.channelId){
-        return(
-      Object.values(this.props.channelusers).map(channelUserId => 
-      {
-        let actualUrl = [this.props.currentUser, channelUserId.userId].sort((a, b) => (a-b)).join('');
-        return(
-      <li key={`channelusers-${channelUserId.userId}`}>
-        <Link to={`/client/dm/${actualUrl}`}>
-      <img src={window.images.dprofile}></img>
-      {this.props.users[channelUserId.userId] ? this.props.users[channelUserId.userId].username : ""}</Link>
-      </li>)
-    
-    
-    
-    
-    }))}}
+  
 
    
 
@@ -50,7 +61,7 @@ class SideDetail extends React.Component {
       <div className="details-title">Member List</div>
       <div className="details-subtitle">click a member to message</div>
     
-      {channelusers()}
+      {this.channelusers()}
       </div>
     
 

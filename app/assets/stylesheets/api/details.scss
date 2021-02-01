@@ -36,3 +36,22 @@
   font-style: italic;
   color: gray;
 }
+
+.details-approval-approve,.details-approval-deny{
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+  outline: inherit;
+  margin: 0 5px 0;
+}
+
+.details-approval-approve:hover{
+  color:#0a520a;
+}
+
+.details-approval-deny:hover{
+  color:#752217;
+}

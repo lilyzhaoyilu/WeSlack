@@ -20,8 +20,16 @@ class Api::ChannelUsersController < ApplicationController
     end 
   end 
 
+  def update
+    @channeluser = ChannelUser.find_by(user_id: params[:channeluser][:user_id], channel_id: params[:channeluser][:channel_id])
+
+    @channeluser.update(channeluser_params)
+
+  end 
+
   def destroy
     @channeluser = ChannelUser.find_by(user_id: params[:channeluser][:user_id], channel_id: params[:channeluser][:channel_id])
+
     if @channeluser
       @channeluser.destroy
     else 

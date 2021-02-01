@@ -5,6 +5,8 @@ import { Link, Redirect } from 'react-router-dom';
 class SideDetail extends React.Component {
   constructor(props){
     super(props);
+    this.handleApprovePending = this.handleApprovePending.bind(this);
+    this.handleDenyPending = this.handleDenyPending.bind(this);
    
   // this.handleGoBackToChannel = this.handleGoBackToChannel.bind(this);
   }
@@ -25,6 +27,33 @@ class SideDetail extends React.Component {
     }
   }
 
+  displayPending(userIdInput){
+    
+    if(this.props.currentChannel && (this.props.currentChannel.admin_id == this.props.currentUser)){
+      
+      if(this.props.channelusers[userIdInput] && this.props.channelusers[userIdInput].pending === true){
+      return (<span className="details-approval-group">
+
+        <button className="details-approval-approve" onClick={(e)=>this.handleApprovePending(userIdInput,e)}><i className="fas fa-check"></i></button>
+
+        <button className="details-approval-deny" onClick={(e)=>this.handleDenyPending(userIdInput,e)}><i className="fas fa-times"></i></button>
+
+        </span>)}
+    }
+  }
+
+  handleApprovePending(userIdInput,e){
+    e.preventDefault();
+    this.props.patchChannelUser(this.props.match.params.channelId, userIdInput, false).then(window.location.reload());
+  }
+
+  handleDenyPending(userIdInput,e){
+    e.preventDefault();
+    this.props.deleteChannelUser(this.props.match.params.channelId, userIdInput).then(window.location.reload());
+  }
+
+  
+
 
 
 
@@ -40,8 +69,11 @@ class SideDetail extends React.Component {
 
       <Link to={`/client/dm/${actualUrl}`}>
       <img src={window.images.dprofile}></img>
-      {this.props.users[channelUserId.userId] ? this.props.users[channelUserId.userId].username : ""}</Link>
+      {this.props.users[channelUserId.userId] ? this.props.users[channelUserId.userId].username : ""}
+      </Link>
+
       {this.displayAdmin(channelUserId.userId)}
+      {this.displayPending(channelUserId.userId)}
       </li>)
   }
   ))}}

@@ -18,6 +18,19 @@ export const createChannelUser = (channelId, userId, pending) =>{
   })
 }
 
+
+export const patchChannelUser = (channelId, userId, pending) =>{
+  return $.ajax({
+    url:`/api/channel_users/${userId}`,
+    method:"PATCH",
+    data: {channeluser:{
+      user_id:userId,
+      channel_id:channelId,
+      pending: pending
+    }}
+  })
+}
+
 export const deleteChannelUser = (channelId, userId) =>{
   return $.ajax({
     url:`/api/channel_users/${userId}`,

@@ -28,7 +28,7 @@ cohorthost = User.create(username: 'Cohort',  password: 'cohorthaaha')
 
 
 generalchannel = Channel.create(name: 'general', description: 'this is the general channel', admin_id: demo.id)
-corgichat = Channel.create(name: 'corgi-chat', public: false, description: 'the woof doof chat', admin_id: leo.id )
+privatechat = Channel.create(name: 'private-chat', public: false, description: 'a private channel', admin_id: leo.id )
 demochannel = Channel.create(name: 'check-out-channel-features', description: 'Things you want to know about WeSlack', admin_id: demo.id)
 randomchannel = Channel.create(name: 'random', description: "random stuff", admin_id: demo.id)
 cohort = Channel.create(name: '09-20-sf-cohort', description: 'topic for this week is MERN!', admin_id: cohorthost.id)
@@ -37,7 +37,7 @@ tryleave = Channel.create(name: 'try-leave-this-channel', description: 'try leav
 
 
 
-member1 = ChannelUser.create(channel_id: corgichat.id, user_id: demo.id)
+member1 = ChannelUser.create(channel_id: privatechat.id, user_id: demo.id)
 
 User.all.each do |user|
   Channel.all.each do |channel|
@@ -54,7 +54,7 @@ message1 = Cmessage.create(body:"Hi WeSlack is pretty cool!", author_id: leo.id,
 message2 = Cmessage.create(body:"I totally agree! Yay communicating :)", author_id: chatbot.id, channel_id: generalchannel.id)
 message3 = Cmessage.create(body:"I am excited to be here ヾ(◍°∇°◍)ﾉﾞ", author_id: puff.id, channel_id: generalchannel.id)
 message9 = Cmessage.create(body:"happy to be here!", author_id: lucy.id, channel_id: cohort.id)
-message4 = Cmessage.create(body:"woof who wants to meet up Friday afternoon?!?!", author_id: leo.id, channel_id: corgichat.id)
+message4 = Cmessage.create(body:"woof who wants to meet up Friday afternoon?!?!", author_id: leo.id, channel_id: privatechat.id)
 message7 = Cmessage.create(body:"Hi I am new here, nice to meet everybody and look forward to knowing you all!", author_id: elizabeth.id, channel_id: generalchannel.id)
 message8 = Cmessage.create(body:"Welcome! It is very nice to have you here!", author_id: chatbot.id, channel_id: generalchannel.id)
 

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom';
-
+import {patchChannelUser, deleteChannelUser} from '../../actions/channeluser_actions'
 import SideDetail from './sidedetails';
 
 const mapStateToProps = (state, ownProps) => {
@@ -13,7 +13,8 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  
+  patchChannelUser: (channelId, userId, pending) => dispatch(patchChannelUser(channelId, userId, pending)),
+  deleteChannelUser: (channelId, userId) => dispatch(deleteChannelUser(channelId, userId)),
 
 });
 

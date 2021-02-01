@@ -28,7 +28,7 @@ cohorthost = User.create(username: 'Cohort',  password: 'cohorthaaha')
 
 
 generalchannel = Channel.create(name: 'general', description: 'this is the general channel', admin_id: demo.id)
-privatechat = Channel.create(name: 'private-chat', public: false, description: 'a private channel', admin_id: leo.id )
+privatechat = Channel.create(name: 'private-chat', public: false, description: 'a private channel', admin_id: demo.id )
 demochannel = Channel.create(name: 'check-out-channel-features', description: 'Things you want to know about WeSlack', admin_id: demo.id)
 randomchannel = Channel.create(name: 'random', description: "random stuff", admin_id: demo.id)
 cohort = Channel.create(name: '09-20-sf-cohort', description: 'topic for this week is MERN!', admin_id: cohorthost.id)

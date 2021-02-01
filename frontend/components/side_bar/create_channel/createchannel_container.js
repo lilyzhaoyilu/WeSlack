@@ -5,7 +5,7 @@ import {createChannel, fetchChannels} from '../../../actions/channel_actions'
 import CreateChannel from './createchannel';
 
 const mapStateToProps = (state, ownProps) => {
-  
+  // console.log(state.session)
   return {
     currentUser: state.session.currentUser,
     users: state.users,   

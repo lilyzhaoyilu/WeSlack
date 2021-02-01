@@ -59,7 +59,7 @@ class CreateChannel extends React.Component {
 //handle submit form
   handleSubmit(e){
     e.preventDefault();
-    const cchannel = Object.assign({}, this.state);
+    const cchannel = Object.assign({}, this.state, {admin_id: this.props.currentUser});
     delete cchannel.show;
     this.handleNotShow(e);
     this.props.processForm(cchannel)

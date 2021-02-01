@@ -6,13 +6,27 @@ export const fetchChannelUsers = (channelId) =>{
   })
 }
 
-export const createChannelUser = (channelId, userId) =>{
+export const createChannelUser = (channelId, userId, pending) =>{
   return $.ajax({
     url:`/api/channel_users`,
     method:"POST",
     data: {channeluser:{
       user_id:userId,
-      channel_id:channelId
+      channel_id:channelId,
+      pending: pending
+    }}
+  })
+}
+
+
+export const patchChannelUser = (channelId, userId, pending) =>{
+  return $.ajax({
+    url:`/api/channel_users/${userId}`,
+    method:"PATCH",
+    data: {channeluser:{
+      user_id:userId,
+      channel_id:channelId,
+      pending: pending
     }}
   })
 }

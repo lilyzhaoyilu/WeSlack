@@ -17,7 +17,7 @@ class Api::ChannelsController < ApplicationController
 
   def create
     @channel = Channel.new(channel_params)
-    # debugger
+    debugger
     # @channel.public = @channel.public == true ? true : false
     if @channel.save
       # if @channel.public == true
@@ -53,7 +53,7 @@ class Api::ChannelsController < ApplicationController
   private
 
   def channel_params
-    params.require(:channel).permit(:name, :public, :description)
+    params.require(:channel).permit(:name, :public, :description, :admin_id)
   end
 
   # def cast_channel_to_users

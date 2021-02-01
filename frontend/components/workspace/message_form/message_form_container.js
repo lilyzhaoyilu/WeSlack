@@ -11,14 +11,15 @@ const mapStateToProps = (state, ownProps) => {
     currentChannel: state.entities.allchannels[ownProps.match.params.channelId],
     currentDM:ownProps.match.params.dmId,
     allchannels: state.entities.allchannels,
-    channels: state.entities.channels
+    channels: state.entities.channels,
+    channelUsers: state.entities.channelusers
 }};
 
 
 const mapDispatchToProps = dispatch => ({
   createCMessage: (cmessage) => dispatch(createCMessage(cmessage)), 
   createDMessage: (message) => dispatch(createDMessage(message)), 
-  createChannelUser: (channelId, userId) => dispatch(createChannelUser(channelId, userId)),
+  createChannelUser: (channelId, userId, pending) => dispatch(createChannelUser(channelId, userId, pending)),
 });
 
 export default  withRouter(connect(

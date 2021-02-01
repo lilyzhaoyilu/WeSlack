@@ -17,7 +17,7 @@ class Api::ChannelsController < ApplicationController
 
   def create
     @channel = Channel.new(channel_params)
-    debugger
+    # debugger
     # @channel.public = @channel.public == true ? true : false
     if @channel.save
       # if @channel.public == true

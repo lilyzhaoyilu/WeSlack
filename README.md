@@ -47,6 +47,12 @@ This project was created within approximately 10 days as a demo project, and thi
 
 ![Channel members and buttons](https://github.com/lilyzhaoyilu/WeSlack/blob/main/app/assets/images/memberlist.png)
 
+### Channel Member Control
+- The admin of the private channels can approve/deny other users joining requests
+
+![Channel Member Control](https://github.com/lilyzhaoyilu/WeSlack/blob/main/app/assets/images/membercontrol.png)
+
+
 ### Direct Messages
 
 - Users can send messages to other users
@@ -65,6 +71,7 @@ This project was created within approximately 10 days as a demo project, and thi
 - Auto matches search text (_the search function is implemented through a very naive approach that will only work for demo purpose/very small amount of data_)
 - Users can click on the search result and be redirected to the message page to the corresponding channel/user.
   ![Search](https://github.com/lilyzhaoyilu/WeSlack/blob/main/app/assets/images/search.png)
+
 
 local start:
 pgstart(customized alias to start postgresql)

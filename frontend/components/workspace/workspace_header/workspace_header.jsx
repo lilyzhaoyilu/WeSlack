@@ -83,12 +83,6 @@ class WorkSpaceHeader extends React.Component {
         // debugger;
         let dis = (this.props.currentChannel.name == "general" || this.props.currentChannel.admin_id != this.props.currentUser) ? true : "";
     
-    // const leaveChannelDisable = () =>{
-    //   if(this.props.currentChannel.admin_id === this.props.currentUser)
-    //   return true
-    // }
-       
-
         return(
         <div>
         
@@ -119,7 +113,6 @@ class WorkSpaceHeader extends React.Component {
         <div className="workspace-header-name">{currentChannel()}</div>
         <button className="workspace-header-description">{currentChannelDescription()}</button>
       </div>
-      {/* {channelusers()} */}
       
       <div className="workspace-header-right">
         <div className="workspace-header-profiles"></div>

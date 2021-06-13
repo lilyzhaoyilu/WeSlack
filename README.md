@@ -1,9 +1,9 @@
 # README
 
-![weslack](https://github.com/lilyzhaoyilu/WeSlack/blob/main/app/assets/images/weslack.png)  
-_The icon is from https://icons8.com/icon/46825/slack, thanks to the creator!_
 
-### [LiveApp](https://weslackin.herokuapp.com/#/)
+
+### [Click here to see a live demo of this project](https://weslackin.herokuapp.com/#/)
+Make sure you try the features by clicking 'try demo' on the top right corner.
 
 ---
 
@@ -72,6 +72,9 @@ This project was created within approximately 10 days as a demo project, and thi
 - Users can click on the search result and be redirected to the message page to the corresponding channel/user.
   ![Search](https://github.com/lilyzhaoyilu/WeSlack/blob/main/app/assets/images/search.png)
 
+
+![weslack](https://github.com/lilyzhaoyilu/WeSlack/blob/main/app/assets/images/weslack.png)  
+_The icon is from https://icons8.com/icon/46825/slack, thanks to the creator!_
 
 local start:
 pgstart(customized alias to start postgresql)

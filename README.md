@@ -2,7 +2,7 @@
 
 
 
-### [Click here to see a live demo of this project](https://weslackin.herokuapp.com/#/)
+### [Project is deprecated](https://weslackin.herokuapp.com/#/)
 Make sure you try the features by clicking 'try demo' on the top right corner.
 
 ---
